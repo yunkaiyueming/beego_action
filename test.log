@@ -1,0 +1,49 @@
+2016/05/06 10:14:41 [default.go:46][M] get user msg 
+2016/05/06 10:15:06 [default.go:46][M] get user msg 
+2016/05/06 10:15:16 [default.go:47][M] get user msg 
+2016/05/06 10:17:49 [default.go:47][M] get user msg 
+2016/05/06 10:18:00 [default.go:47][M] get user msg 
+2016/05/06 10:18:01 [default.go:47][M] get user msg 
+2016/05/06 10:18:01 [default.go:47][M] get user msg 
+2016/05/06 10:18:52 [default.go:47][M] get user msg 
+2016/05/06 10:18:57 [default.go:47][M] get user msg 
+2016/05/06 10:19:05 [default.go:47][M] get user msg 
+2016/05/06 10:19:20 [default.go:47][M] get user msg 
+2016/05/06 10:19:27 [default.go:47][M] get user msg 
+2016/05/06 12:01:12 [default.go:47][M] get user msg 
+2016/05/06 12:01:14 [default.go:47][M] get user msg 
+2016/05/06 12:01:14 [default.go:47][M] get user msg 
+2016/05/06 12:01:14 [default.go:47][M] get user msg 
+2016/05/06 12:01:15 [default.go:47][M] get user msg 
+2016/05/06 12:01:29 [router.go:854][C] the request url is  /user/get_config_data 
+2016/05/06 12:01:29 [router.go:855][C] Handler crashed with error get app config is wrong 
+2016/05/06 12:01:29 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/06 12:01:29 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/06 12:01:29 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/default.go:53 
+2016/05/06 12:01:29 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/06 12:01:29 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/06 12:01:29 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/06 12:01:29 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/06 12:01:29 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/06 12:01:29 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/06 12:01:29 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/06 15:20:36 [default.go:57][M] get user msg 
+2016/05/06 15:54:20 [default.go:59][M] get user msg 
+2016/05/06 15:54:21 [default.go:59][M] get user msg 
+2016/05/06 15:54:21 [default.go:59][M] get user msg 
+2016/05/06 15:54:25 [router.go:854][C] the request url is  /user/getuser 
+2016/05/06 15:54:25 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/06 15:54:25 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/06 15:54:25 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/06 15:54:25 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/06 15:54:25 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/06 15:54:25 [router.go:861][C] D:/Go/src/database/sql/sql.go:1751 
+2016/05/06 15:54:25 [router.go:861][C] E:/GO_PATH/src/beego_code/models/user.go:28 
+2016/05/06 15:54:25 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/default.go:31 
+2016/05/06 15:54:25 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/06 15:54:25 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/06 15:54:25 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/06 15:54:25 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/06 15:54:25 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/06 15:54:25 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/06 15:54:25 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
