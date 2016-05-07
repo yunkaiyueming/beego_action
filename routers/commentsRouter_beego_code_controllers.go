@@ -10,7 +10,7 @@ func init() {
 		beego.ControllerComments{
 			"GetLogById",
 			`/:get_log_by_id`,
-			[]string{"delete"},
+			[]string{"get"},
 			nil})
 
 }

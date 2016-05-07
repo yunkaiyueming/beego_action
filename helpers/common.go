@@ -1,0 +1,82 @@
+package helpers
+
+import (
+	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+)
+
+func My_http_get(url string) string {
+	resp, err := http.Get(url)
+	if err != nil {
+		return "error occur"
+		//fmt.Println("error occur")
+	}
+
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return "body error occur"
+		//fmt.Println("body error occur")
+	}
+
+	return string(body)
+	//fmt.Println(string(body))
+}
+
+//post 第二个参数要设置成”application/x-www-form-urlencoded”，否则post参数无法传递
+func My_http_post() {
+	resp, err := http.Post("http://192.168.7.180:9090/user_list", "application/x-www-form-urlencoded", strings.NewReader("username=aaa"))
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("body error occur")
+	}
+	fmt.Println(string(body))
+}
+
+func HttpPostForm() {
+	resp, err := http.PostForm("http://192.168.7.180:9090/user_list", url.Values{"key": {"Value"}, "id": {"123"}})
+
+	if err != nil {
+		// handle error
+	}
+
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		// handle error
+	}
+
+	fmt.Println(string(body))
+
+}
+
+//有时需要在请求的时候设置头参数、cookie之类的数据,上面的post请求，必须要设定Content-Type为application/x-www-form-urlencoded，post参数才可正常传递
+func HttpDo() {
+	client := &http.Client{}
+
+	req, err := http.NewRequest("POST", "http://192.168.7.180:9090/user_list", strings.NewReader("username=aab"))
+	if err != nil {
+		// handle error
+	}
+
+	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	req.Header.Set("Cookie", "name=anny")
+
+	resp, err := client.Do(req)
+
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		// handle error
+	}
+
+	fmt.Println(string(body))
+}

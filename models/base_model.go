@@ -1,6 +1,7 @@
 package models
 
 import (
+	_ "beego_code/helpers"
 	"database/sql"
 	"fmt"
 

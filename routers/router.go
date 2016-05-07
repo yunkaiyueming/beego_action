@@ -19,6 +19,11 @@ func init() {
 	beego.Router("game/get_game_json", &controllers.GameController{}, "get:GetGameJson")
 
 	beego.Router("json/", &controllers.JsonTestController{}, "get:Get")
+	beego.Router("json/claw_url_msg", &controllers.JsonTestController{}, "get:ClawUrlMsg")
+
+	beego.Router("qiniu/get_files_msg", &controllers.QiniuController{}, "get:GetFilesMsg")
+	beego.Router("qiniu/get_down_file_url", &controllers.QiniuController{}, "get:GetDownFileUrl")
+	beego.Router("qiniu/simple_upload_file", &controllers.QiniuController{}, "get:SimpleUploadFile")
 
 	beego.Router("login", &controllers.LoginController{}, "get:Login")
 

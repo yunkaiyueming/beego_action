@@ -37,6 +37,7 @@ func (l *LoginController) Login() {
 		l.SetSession("id", user_info.Id)
 		fmt.Println("recording session")
 
+		//????跳转不成功
 		l.Redirect("user/welcome", 200)
 		return
 	}
