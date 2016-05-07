@@ -1,2 +1,4 @@
 /*.exe
 /lastupdate.tmp
+/*.pprof
+/*.memprof
