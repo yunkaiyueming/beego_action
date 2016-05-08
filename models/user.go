@@ -3,10 +3,6 @@ package models
 import (
 	"database/sql"
 	"fmt"
-
-	//	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/config"
-	_ "github.com/go-sql-driver/mysql"
 )
 
 type UserModel struct {
@@ -14,46 +10,35 @@ type UserModel struct {
 	Name  string
 	Age   int
 	Likes string
+	Pwd   string
 }
 
-func (u *UserModel) GetAllUser(dbName, table string) ([]UserModel, error) {
-	db, err := GetConnDB(dbName)
-	CheckError(err)
+const USER_MODEL_TABLE_NAME string = "users"
 
-	sqlStr := fmt.Sprintf("select * from %s", table)
+func (u *UserModel) GetAllUser() ([]UserModel, error) {
+	sqlStr := fmt.Sprintf("select * from %s", USER_MODEL_TABLE_NAME)
 	rows, err := db.Query(sqlStr)
 	CheckError(err)
 
-	users := make([]UserModel, 1)
+	users := make([]UserModel, 0)
 	//make([]interface{}, len(columns))
 
 	for rows.Next() {
 		var id, age int
-		var name, likes string
-		err := rows.Scan(&id, &name, &age, &likes)
+		var name, likes, pwd string
+		err := rows.Scan(&id, &name, &age, &likes, &pwd)
 		if err != nil {
 			return nil, err
 		}
 
-		users_tmp := UserModel{Id: id, Age: age, Name: name, Likes: likes}
+		users_tmp := UserModel{Id: id, Age: age, Name: name, Likes: likes, Pwd: pwd}
 		users = append(users, users_tmp)
 	}
 
 	return users, nil
 }
 
-func GetConnDB(dbName string) (*sql.DB, error) {
-	DbConfigInfo := GetDbConfig()
-	db, err := sql.Open("mysql", DbConfigInfo["User"]+":"+DbConfigInfo["Pwd"]+"@/"+DbConfigInfo["DbName"]+"?charset=utf8")
-	//db, err := sql.Open("mysql", "root:123456@/test?charset=utf8")
-	CheckError(err)
-	return db, err
-}
-
 func (u *UserModel) AddUser() int64 {
-	db, err := GetConnDB("test")
-	CheckError(err)
-
 	stmt, err := db.Prepare(`INSERT users(name,age,likes) values (?,?,?)`)
 	defer stmt.Close()
 	CheckError(err)
@@ -82,10 +67,7 @@ func DeleteUser() {
 }
 
 //更新数据
-func update() {
-	db, err := sql.Open("mysql", "root:@/test?charset=utf8")
-	CheckError(err)
-
+func UpdateUser() {
 	stmt, err := db.Prepare(`UPDATE user SET user_age=?,user_sex=? WHERE user_id=?`)
 	CheckError(err)
 	res, err := stmt.Exec(21, 2, 1)
@@ -95,24 +77,15 @@ func update() {
 	fmt.Println(num)
 }
 
-func CheckError(err error) {
-	if err != nil {
-		panic(err)
-		//fmt.Println(err)
-	}
-}
+func (u *UserModel) CheckGetUser(check_name, check_pwd string) UserModel {
+	sql_str := fmt.Sprintf("select * from %s where name='%s' and pwd='%s'", USER_MODEL_TABLE_NAME, check_name, check_pwd)
+	fmt.Println(sql_str)
+	row := db.QueryRow(sql_str)
 
-func GetDbConfig() map[string]string {
-	iniconf, err := config.NewConfig("ini", "conf/app.conf")
-	if err != nil {
-		panic("get app config is wrong")
-	}
+	var id, age int
+	var name, likes, pwd string
 
-	DbConfigInfo := make(map[string]string)
-	DbConfigInfo["DbHost"] = iniconf.String("mysqlurls")
-	DbConfigInfo["User"] = iniconf.String("mysqluser")
-	DbConfigInfo["Pwd"] = iniconf.String("mysqlpass")
-	DbConfigInfo["DbName"] = iniconf.String("mysqldb")
+	row.Scan(&id, &name, &age, &likes, &pwd)
 
-	return DbConfigInfo
+	return UserModel{Id: id, Age: age, Name: name, Likes: likes, Pwd: pwd}
 }

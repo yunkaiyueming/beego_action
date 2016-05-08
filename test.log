@@ -47,3 +47,381 @@
 2016/05/06 15:54:25 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
 2016/05/06 15:54:25 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
 2016/05/06 15:54:25 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:05:48 [default.go:66][M] get user msg 
+2016/05/09 10:05:48 [staticfile.go:51][W] Can't find/open the file:  /favicon.ico file not find 
+2016/05/09 10:05:48 [staticfile.go:51][W] Can't find/open the file:  /favicon.ico file not find 
+2016/05/09 10:20:28 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:20:28 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:20:28 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:20:28 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:20:28 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:20:28 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:20:28 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:20:28 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:20:28 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:20:28 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:20:28 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:20:28 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:20:28 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:20:28 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:20:28 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:20:28 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:20:28 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:20:28 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:21:11 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:21:11 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:21:11 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:11 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:21:11 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:21:11 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:21:11 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:21:11 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:21:11 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:21:11 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:21:11 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:21:11 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:11 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:21:11 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:21:11 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:21:11 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:21:11 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:21:11 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:21:12 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:21:12 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:21:12 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:21:12 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:21:12 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:21:12 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:21:12 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:21:12 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:21:12 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:21:12 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:21:12 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:21:12 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:21:12 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:21:12 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:21:12 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:21:12 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:21:13 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:21:13 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:21:13 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:13 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:21:13 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:21:13 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:21:13 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:21:13 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:21:13 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:21:13 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:21:13 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:21:13 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:13 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:21:13 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:21:13 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:21:13 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:21:13 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:21:13 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:21:14 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:21:14 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:21:14 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:21:14 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:21:14 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:21:14 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:21:14 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:21:14 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:21:14 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:21:14 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:21:14 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:21:15 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:21:15 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:21:15 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:21:15 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:21:15 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:21:15 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:21:15 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:21:15 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:21:15 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:21:15 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:21:15 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:21:16 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:21:16 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:21:16 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:16 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:21:16 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:21:16 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:21:16 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:21:16 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:21:16 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:21:16 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:21:16 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:21:16 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:21:16 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:21:16 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:21:16 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:21:16 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:21:16 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:21:16 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:28:06 [default.go:66][M] get user msg 
+2016/05/09 10:28:21 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:28:21 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:28:21 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:28:21 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:28:21 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:28:21 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:28:21 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:28:21 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:28:21 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:28:21 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:28:21 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:28:21 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:28:21 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:28:21 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:28:21 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:28:21 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:28:21 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:28:21 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:28:36 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:28:36 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:28:36 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:28:36 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:28:36 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:28:36 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:28:36 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:28:36 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:28:36 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:28:36 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:28:36 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:28:36 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:28:36 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:28:36 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:28:36 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:28:36 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:28:36 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:28:36 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:28:39 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:28:39 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:28:39 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:28:39 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:28:39 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:28:39 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:28:39 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:28:39 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:28:39 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:28:39 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:28:39 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:28:39 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:28:39 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:28:39 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:28:39 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:28:39 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:28:39 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:28:39 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:28:41 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:28:41 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:28:41 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:28:41 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:28:41 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:28:41 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:28:41 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:28:41 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:28:41 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:28:41 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:28:41 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:28:41 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:28:41 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:28:41 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:28:41 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:28:41 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:28:41 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:28:41 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 10:29:13 [router.go:854][C] the request url is  /game/update_user 
+2016/05/09 10:29:13 [router.go:855][C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/05/09 10:29:13 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:29:13 [router.go:861][C] D:/Go/src/runtime/panic.go:426 
+2016/05/09 10:29:13 [router.go:861][C] D:/Go/src/runtime/panic.go:45 
+2016/05/09 10:29:13 [router.go:861][C] D:/Go/src/runtime/signal_windows.go:161 
+2016/05/09 10:29:13 [router.go:861][C] D:/Go/src/database/sql/sql.go:778 
+2016/05/09 10:29:13 [router.go:861][C] D:/Go/src/database/sql/sql.go:981 
+2016/05/09 10:29:13 [router.go:861][C] D:/Go/src/database/sql/sql.go:963 
+2016/05/09 10:29:13 [router.go:861][C] E:/GO_PATH/src/beego_code/models/game.go:48 
+2016/05/09 10:29:13 [router.go:861][C] E:/GO_PATH/src/beego_code/controllers/game.go:15 
+2016/05/09 10:29:13 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:472 
+2016/05/09 10:29:13 [router.go:861][C] D:/Go/src/reflect/value.go:435 
+2016/05/09 10:29:13 [router.go:861][C] D:/Go/src/reflect/value.go:303 
+2016/05/09 10:29:13 [router.go:861][C] E:/GO_PATH/src/github.com/astaxie/beego/router.go:778 
+2016/05/09 10:29:13 [router.go:861][C] D:/Go/src/net/http/server.go:2081 
+2016/05/09 10:29:13 [router.go:861][C] D:/Go/src/net/http/server.go:1472 
+2016/05/09 10:29:13 [router.go:861][C] D:/Go/src/runtime/asm_amd64.s:1998 
+2016/05/09 11:10:59 [default.go:66][M] get user msg 
+2016/05/09 11:43:53 [default.go:66][M] get user msg 
+2016/05/10 15:50:23 [base_model.go:60][M] get user msg 
+2016/05/10 15:50:25 [base_model.go:60][M] get user msg 
+2016/05/10 15:52:49 [base_model.go:60][M] get user msg 
+2016/05/10 16:03:25 [base_model.go:60][M] get user msg 
+2016/05/10 16:03:26 [base_model.go:60][M] get user msg 
+2016/05/10 16:03:26 [base_model.go:60][M] get user msg 
+2016/05/10 16:04:14 [base_model.go:60][M] get user msg 
+2016/05/10 16:04:46 [base_model.go:60][M] get user msg 
+2016/05/10 16:05:17 [base_model.go:60][M] get user msg 
+2016/05/10 16:05:18 [base_model.go:60][M] get user msg 
+2016/05/10 16:05:59 [base_model.go:60][M] get user msg 
+2016/05/10 16:05:59 [base_model.go:60][M] get user msg 
+2016/05/10 16:06:47 [base_model.go:60][M] get user msg 
+2016/05/10 16:07:02 [base_model.go:60][M] get user msg 
+2016/05/10 16:07:03 [staticfile.go:51][W] Can't find/open the file:  /favicon.ico file not find 
+2016/05/10 16:07:03 [staticfile.go:51][W] Can't find/open the file:  /favicon.ico file not find 
+2016/05/10 16:08:19 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:19 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:19 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:19 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:19 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:19 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:20 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:20 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:20 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:20 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:20 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:20 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:21 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:21 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:21 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:21 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:21 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:21 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:22 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:22 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:22 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:22 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:22 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:22 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:23 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:23 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:23 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:23 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:23 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:23 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:23 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:23 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:23 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:23 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:23 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:23 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:34 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:34 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:34 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:34 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:34 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:34 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:37 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:37 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:37 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:37 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:37 [base_model.go:60][M] get user msg 
+2016/05/10 16:08:37 [base_model.go:60][M] get user msg 
+2016/05/10 16:09:19 [base_model.go:60][M] get user msg 
+2016/05/10 16:09:21 [base_model.go:60][M] get user msg 
+2016/05/10 16:09:21 [base_model.go:60][M] get user msg 
+2016/05/10 16:09:49 [base_model.go:60][M] get user msg 
+2016/05/10 16:09:50 [base_model.go:60][M] get user msg 
+2016/05/10 16:09:50 [base_model.go:60][M] get user msg 
+2016/05/10 16:09:50 [base_model.go:60][M] get user msg 
+2016/05/10 16:10:57 [base_model.go:60][M] get user msg 
+2016/05/10 16:23:22 [base_model.go:60][M] get user msg 
+2016/05/10 16:23:26 [base_model.go:60][M] get user msg 
+2016/05/10 16:23:26 [base_model.go:60][M] get user msg 
+2016/05/10 16:23:27 [base_model.go:60][M] get user msg 
+2016/05/10 16:23:28 [base_model.go:60][M] get user msg 
+2016/05/10 16:23:28 [base_model.go:60][M] get user msg 
+2016/05/10 16:23:29 [base_model.go:60][M] get user msg 
+2016/05/10 16:23:29 [base_model.go:60][M] get user msg 
+2016/05/10 16:23:29 [base_model.go:60][M] get user msg 
+2016/05/10 16:34:47 [base_model.go:60][M] get user msg 
+2016/05/10 16:34:48 [base_model.go:60][M] get user msg 
+2016/05/10 16:34:49 [base_model.go:60][M] get user msg 

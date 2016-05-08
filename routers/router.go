@@ -9,18 +9,20 @@ import (
 func init() {
 	//自定义方法及 RESTful 规则
 	beego.Router("/", &controllers.MainController{})
-	beego.Router("user/getuser", &controllers.MainController{}, "get:GetUser")
-	beego.Router("user/updateuser", &controllers.MainController{}, "*:UpdateUser")
-	beego.Router("user/deleteuser", &controllers.MainController{}, "get,post:DeleteUser")
-	beego.Router("user/adduser", &controllers.MainController{}, "get:AddUser;post:UpdateUser")
+	beego.Router("user/welcome", &controllers.MainController{})
+	beego.Router("user/get_all_user", &controllers.MainController{}, "get:GetAllUser")
+	beego.Router("user/update_user", &controllers.MainController{}, "*:UpdateUser")
+	beego.Router("user/delete_user", &controllers.MainController{}, "get,post:DeleteUser")
+	beego.Router("user/add_user", &controllers.MainController{}, "get:AddUser;post:UpdateUser")
 	beego.Router("user/get_config_data", &controllers.MainController{}, "get:GetConfigData")
 
-	beego.Router("/msg/get_msg_by_id", &controllers.MsgController{}, "get:GetMsgById")
+	beego.Router("game/get_game_json", &controllers.GameController{}, "get:GetGameJson")
 
-	//注解路由 ????
-	//beego.Include(&controllers.MsgController{})
-	//beego.Include(&controllers.CMSController{})
+	beego.Router("json/", &controllers.JsonTestController{}, "get:Get")
 
+	beego.Router("login", &controllers.LoginController{}, "get:Login")
+
+	//注解路由
 	ns := beego.NewNamespace("/v2",
 		beego.NSNamespace("/log",
 			beego.NSInclude(
