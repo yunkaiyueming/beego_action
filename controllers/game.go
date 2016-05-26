@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"beego_code/models"
+	"beego_action/models"
 	_ "encoding/json"
 	_ "fmt"
 

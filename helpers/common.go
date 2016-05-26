@@ -80,3 +80,18 @@ func HttpDo() {
 
 	fmt.Println(string(body))
 }
+
+func ClawResponseHeader(url string) http.Header {
+	resp, err := http.Get(url)
+	if err != nil {
+		return nil
+		//fmt.Println("error occur")
+	}
+
+	defer resp.Body.Close()
+	response_headers := resp.Header
+	return response_headers
+	//	for key, val := range response_headers {
+	//		fmt.Println(key, val)
+	//	}
+}

@@ -1,7 +1,7 @@
 package models
 
 import (
-	_ "beego_code/helpers"
+	_ "beego_action/helpers"
 	"database/sql"
 	"fmt"
 
@@ -13,6 +13,7 @@ import (
 var db *sql.DB
 
 func init() {
+	fmt.Print("start base_model init")
 	GetConnDB("")
 }
 
@@ -34,7 +35,7 @@ func GetConnDB(db_name string) {
 func GetDbConfig() map[string]string {
 	iniconf, err := config.NewConfig("ini", "conf/app.conf")
 	if err != nil {
-		panic("get app config is wrong")
+		panic(err)
 	}
 
 	DbConfigInfo := make(map[string]string)

@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"beego_code/controllers"
+	"beego_action/controllers"
 
 	"github.com/astaxie/beego"
 )
@@ -20,6 +20,7 @@ func init() {
 
 	beego.Router("json/", &controllers.JsonTestController{}, "get:Get")
 	beego.Router("json/claw_url_msg", &controllers.JsonTestController{}, "get:ClawUrlMsg")
+	beego.Router("json/claw_resonse_header", &controllers.JsonTestController{}, "get:ClawResponseHeader")
 
 	beego.Router("qiniu/get_files_msg", &controllers.QiniuController{}, "get:GetFilesMsg")
 	beego.Router("qiniu/get_down_file_url", &controllers.QiniuController{}, "get:GetDownFileUrl")

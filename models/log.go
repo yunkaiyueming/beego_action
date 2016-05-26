@@ -4,6 +4,7 @@ import (
 	//"loggo/utils"
 	"path/filepath"
 	//"strconv"
+	"fmt"
 	"strings"
 )
 
@@ -12,6 +13,10 @@ var (
 )
 
 const big = 0xFFFFFF
+
+func init() {
+	fmt.Println("start log_model init")
+}
 
 func LogPV(urls string) bool {
 	ext := filepath.Ext(urls)

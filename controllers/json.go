@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"beego_code/helpers"
+	"beego_action/helpers"
 	"encoding/json"
 	"fmt"
 
@@ -40,4 +40,10 @@ func (j *JsonTestController) Get() {
 func (j *JsonTestController) ClawUrlMsg() {
 	res := helpers.My_http_get("http://www.baidu.com")
 	j.Ctx.WriteString(res)
+}
+
+func (j *JsonTestController) ClawResponseHeader() {
+	headers := helpers.ClawResponseHeader("http://www.cnblogs.com")
+	json_byte, _ := json.Marshal(headers)
+	fmt.Println(string(json_byte))
 }

@@ -1,1 +1,1 @@
-# beego_code
+# beego_action

@@ -15,6 +15,10 @@ type UserModel struct {
 
 const USER_MODEL_TABLE_NAME string = "users"
 
+func init() {
+	fmt.Print("start user_model init")
+}
+
 func (u *UserModel) GetAllUser() ([]UserModel, error) {
 	sqlStr := fmt.Sprintf("select * from %s", USER_MODEL_TABLE_NAME)
 	rows, err := db.Query(sqlStr)

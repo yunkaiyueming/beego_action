@@ -3,7 +3,7 @@ package controllers
 import (
 	"fmt"
 
-	"beego_code/models"
+	"beego_action/models"
 
 	"github.com/astaxie/beego"
 )

@@ -20,8 +20,8 @@ var (
 	//设置需要操作的文件的key
 	key        = "icon512.png"
 	domain     = "xxxx.com2.z0.glb.qiniucdn.com"
-	access_key = "xx"
-	select_key = "xx"
+	access_key = ""
+	select_key = ""
 )
 
 func (q *QiniuController) GetFilesMsg() {

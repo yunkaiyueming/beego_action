@@ -6,7 +6,7 @@ import (
 
 func init() {
 
-	beego.GlobalControllerRouter["beego_code/controllers:LogController"] = append(beego.GlobalControllerRouter["beego_code/controllers:LogController"],
+	beego.GlobalControllerRouter["beego_action/controllers:LogController"] = append(beego.GlobalControllerRouter["beego_action/controllers:LogController"],
 		beego.ControllerComments{
 			"GetLogById",
 			`/:get_log_by_id`,
