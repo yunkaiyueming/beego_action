@@ -28,6 +28,8 @@ func init() {
 
 	beego.Router("login", &controllers.LoginController{}, "get:Login")
 
+	beego.Router("article/test", &controllers.ArticleController{}, "get:TestFunc")
+
 	//注解路由
 	ns := beego.NewNamespace("/v2",
 		beego.NSNamespace("/log",

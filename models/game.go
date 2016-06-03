@@ -14,7 +14,7 @@ type GameModel struct {
 const GAME_MODEL_TABLE_NAME = "game"
 
 func init() {
-	fmt.Print("start game_model init")
+	fmt.Println("start game_model init")
 }
 
 func (g *GameModel) GetGameJson() []GameModel {

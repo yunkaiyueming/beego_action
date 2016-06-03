@@ -13,7 +13,7 @@ import (
 var db *sql.DB
 
 func init() {
-	fmt.Print("start base_model init")
+	fmt.Println("start base_model init")
 	GetConnDB("")
 }
 
@@ -54,7 +54,7 @@ func CheckError(err error) {
 }
 
 func Record_log(msg_level, msg string) {
-	beego.SetLogger("file", `{"filename":"E:/GO_PATH/src/beego_code/test.log"}`)
+	beego.SetLogger("file", `{"filename":"E:/GO_PATH/src/beego_action/test.log"}`)
 	//beego.BeeLogger.DelLogger("console")
 	beego.SetLevel(beego.LevelInformational)
 	beego.SetLogFuncCall(true)

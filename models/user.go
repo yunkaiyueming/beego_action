@@ -16,7 +16,7 @@ type UserModel struct {
 const USER_MODEL_TABLE_NAME string = "users"
 
 func init() {
-	fmt.Print("start user_model init")
+	fmt.Println("start user_model init")
 }
 
 func (u *UserModel) GetAllUser() ([]UserModel, error) {

@@ -22,6 +22,12 @@ func (c *MainController) Get() {
 	c.Data["test_str"] = beego.AppConfig.String("prod::test_str")
 	models.Record_log("eme", "get user msg")
 
+	//session操作
+	c.MySessionOp()
+
+	//URL构建操作
+	c.MyUrlFor()
+
 	c.TplName = "index.tpl"
 	c.Render()
 }
@@ -37,10 +43,12 @@ func (c *MainController) GetAllUser() {
 	c.Render()
 }
 
+//UpdateUser is
 func (c *MainController) UpdateUser() {
 	c.Ctx.WriteString("hello updateuser")
 }
 
+//AddUser is
 func (c *MainController) AddUser() {
 	u := &models.UserModel{}
 	id := u.AddUser()
@@ -68,4 +76,34 @@ func (c *MainController) GetConfigData() {
 		panic("appid is wrong")
 	}
 	c.TplName = "get_config_data.tpl"
+}
+
+func (c *MainController) MySessionOp() {
+	v := c.GetSession("pv")
+	if v != nil {
+		v = v.(int) + 1
+	} else {
+		v = int(1)
+	}
+	c.SetSession("pv", v)
+
+	c.SessionRegenerateID()
+	fmt.Println(v)
+}
+
+func (c *MainController) MyUrlFor() {
+	c.URLFor("TestController.List")
+	// 输出 /api/list
+
+	url2 := c.URLFor("TestController.Get", ":last", "xie", ":first", "asta")
+	fmt.Println(url2)
+	// 输出 /person/xie/asta
+
+	c.URLFor("TestController.Myext")
+	// 输出 /Test/Myext
+
+	c.URLFor("TestController.GetUrl")
+	// 输出 /Test/GetUrl
+
+	//c.Abort()
 }
