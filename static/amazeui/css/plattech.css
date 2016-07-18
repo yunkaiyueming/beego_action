@@ -1,0 +1,13 @@
+.floatThead-table{background: #fff;}
+body {
+  font-size: 1.2rem; /* =14px */
+}
+.am-btn{
+    font-size: 1.4rem;
+}
+.am-popover{
+    font-size: 1.4rem;
+}
+div.DTTT_print_info{
+	z-index:2000;
+}
