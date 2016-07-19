@@ -1,0 +1,80 @@
+<style>
+    .floatThead-table {background-color: #FFFFFF;}
+</style>
+<div class="am-cf am-padding">
+    <div class="am-fl am-cf">
+        <span class="am-badge am-badge-danger">子平台:</span>
+        <a href="http://raysdk.com/game-package-manager/game_package/index?big_app_id=1009&sub_app_id=-1" class="am-badge am-badge-warning am-round">
+            所有平台		</a>
+        <a href="http://raysdk.com/game-package-manager/game_package/index?big_app_id=1009&sub_app_id=1009">
+            <span class="am-badge am-badge-primary am-round" style="vertical-align: baseline">快用_iOS_飞流</span>
+        </a>
+        <a href="http://raysdk.com/game-package-manager/game_package/index?big_app_id=1009&sub_app_id=10109">
+            <span class="am-badge am-badge-primary am-round" style="vertical-align: baseline">快用2_iOS_飞流</span>
+        </a>
+    </div>
+</div>
+
+<div class="am-g">
+    <div class="am-u-sm-12 am-scrollable-horizontal">
+        <table class="am-table am-table-bordered am-table-radius am-table-striped am-table-compact am-table-hover am-text-nowrap tablesorter">
+            <thead>
+                <tr>
+                    <th>文件名<i class="fa fa-sort"></i></th>								
+                    <th>包版本<i class="fa fa-sort"></i></th>								
+                    <th>游戏名称<i class="fa fa-sort"></i></th>								
+                    <th>所属渠道<i class="fa fa-sort"></i></th>								
+                    <th>包状态<i class="fa fa-sort"></i></th>								
+                    <th>状态相关日期<i class="fa fa-sort"></i></th>								
+                    <th>关于强更<i class="fa fa-sort"></i></th>								
+                    <th>SDK版本<i class="fa fa-sort"></i></th>								
+                    <th>备注<i class="fa fa-sort"></i></th>								
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style='background:#d0d0d0 !important'>
+                    <td><a href="http://raysdk.com/game-package-manager/game_package/index?id=179&big_app_id=1009&sub_app_id=-1&id=179" title="包大小:36,25 MB">TankKY_YY_v1.6.6_v39406_c9_201510261612.ipa</a></td>
+                    <td>1.6.6</td>
+                    <td>坦克世界2</td>
+                    <td>快用_iOS_飞流</td>
+                    <td><a href="http://raysdk.com/game-package-manager/game_package/package_time_line?&big_app_id=1009&id=179" title="xin.dai@rayjoy.com 更新包状态为 已作废 2015-10-28 12:34:52" class="hide-option">已作废</a></td>
+                    <td>2015-10-26 00:00:00</td>
+                    <td>N/A</td>
+                    <td>2.2.3</td>
+                    <td>已验证，没有问题</td>
+                    <td>
+                        <a href="#" class="down_url_btn" id="179"><span class="am-badge am-badge-primary am-round">下载包</span></a>
+                        <a href="http://raysdk.com/game-package-manager/game_package/edit_package?id=179&big_app_id=1009"><span class="am-badge am-badge-primary am-round">编辑状态</span></a>
+                        <a href="http://raysdk.com/game-package-manager/game_package/edit_package?id=179&type=change_package&big_app_id=1009"><span class="am-badge am-badge-primary am-round">更换包</span></a>
+                        <a href="http://raysdk.com/game-package-manager/game_package/del_package?id=179&big_app_id=1009"><span class="am-badge am-badge-primary am-round">删除包</span></a>
+                        <a href="http://raysdk.com/game-package-manager/game_package/index?id=179&big_app_id=1009&sub_app_id=-1&id=179"><span class="am-badge am-badge-primary am-round">包详情</span></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        var table = $('.tablesorter').dataTable({
+            "bPaginate": false, //翻页功能
+            "bLengthChange": false, //改变每页显示数据数量
+            "bFilter": false, //过滤功能
+            "bSort": true, //排序功能
+            "bInfo": false, //页脚信息
+            "bAutoWidth": false, //自动宽度
+            "bProcessing": false, //是否显示“正在处理”这个提示信息
+            "aaSorting": [0, "desc"], //默认排序列
+            "columnDefs": [
+                {type: 'formatted-num', targets: '_all'}
+            ]
+        });
+        var $floattable = $('.tablesorter');
+        $floattable.floatThead();
+        $('.am-scrollable-horizontal').on('scroll', function (e) {
+            $floattable.floatThead('reflow');
+        });
+    });
+</script>

@@ -14,5 +14,4 @@ type ArticleController struct {
 func (a *ArticleController) TestFunc() {
 	article_info := &models.Article{}
 	article_info.Read()
-
 }

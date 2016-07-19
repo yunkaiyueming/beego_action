@@ -8,7 +8,6 @@ import (
 
 func init() {
 	//自定义方法及 RESTful 规则
-	beego.Router("/", &controllers.MainController{})
 	beego.Router("user/welcome", &controllers.MainController{})
 	beego.Router("user/get_all_user", &controllers.MainController{}, "get:GetAllUser")
 	beego.Router("user/update_user", &controllers.MainController{}, "*:UpdateUser")
@@ -17,6 +16,9 @@ func init() {
 	beego.Router("user/get_config_data", &controllers.MainController{}, "get:GetConfigData")
 
 	beego.Router("game/get_game_json", &controllers.GameController{}, "get:GetGameJson")
+
+	beego.Router("/", &controllers.HomeController{}, "get:Index")
+	beego.Router("home/index", &controllers.HomeController{}, "get:Index")
 
 	beego.Router("json/", &controllers.JsonTestController{}, "get:Get")
 	beego.Router("json/claw_url_msg", &controllers.JsonTestController{}, "get:ClawUrlMsg")

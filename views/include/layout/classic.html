@@ -1,0 +1,38 @@
+{{.headerFile}}
+
+<div class="am-cf admin-main">
+    <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+        <div class="am-offcanvas-bar admin-offcanvas-bar">
+ 
+            {{.sidebarFile}}
+ 
+            <!--sidebar在window版本上会出现右侧滚动条，加上此div后解决-->
+            <div class="am-panel"></div>
+        </div>
+    </div>
+
+    <div class="admin-content">
+        <div class="am-cf am-padding">
+            <div class="am-fl am-cf">
+                <span class="am-icon-home am-icon-sm"></span>
+                <span id="game_name"></span>
+                <span  id="breadcrumb_menu"></span>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var menu1 = $(".sidebar .nav .active .menu-text").text();
+            var menu2 = $(".sidebar .nav .active .submenu .active > a").text();
+
+            $("#breadcrumb_menu1").text(menu1);
+            $("#breadcrumb_menu2").text(menu2);
+
+            var game_menu = "<a href='http://raysdk.com/game-package-manager/applist/applist?game_name=tank'>" + "坦克" + "</a>";
+            $("#game_name").html(game_menu);
+        </script>	
+        
+        {{.LayoutContent}}
+        
+    </div>
+</div>
+
+{{.footerFile}}

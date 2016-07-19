@@ -466,3 +466,6 @@
 2016/05/26 15:17:02 [base_model.go:62][M] get user msg 
 2016/05/26 15:20:01 [base_model.go:62][M] get user msg 
 2016/05/26 15:26:06 [base_model.go:62][M] get user msg 
+2016/07/18 17:05:27 [base_model.go:62][M] get user msg 
+2016/07/18 17:05:28 [staticfile.go:51][W] Can't find/open the file:  /favicon.ico file not find 
+2016/07/18 17:05:28 [staticfile.go:51][W] Can't find/open the file:  /favicon.ico file not find 

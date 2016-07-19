@@ -1,0 +1,65 @@
+<!doctype html>
+<html class="no-js" style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>RayJoy Game Package</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <link rel="icon" type="image/png" href="http://7xlb7i.com2.z0.glb.qiniucdn.com/favicon.ico">
+        <link rel="stylesheet" href="{{.staticUrl}}/amazeui/css/amazeui.min.css"/>
+        <link rel="stylesheet" href="{{.staticUrl}}/amazeui/css/admin.css">
+     	<!--<link rel="stylesheet" href="{{.staticUrl}}/amazeui/css/rjweb-steps.css">-->
+        <link rel="stylesheet" href="{{.staticUrl}}/amazeui/css/amazeui.datatables.min.css">
+        <link rel="stylesheet" href="{{.staticUrl}}/amazeui/css/plattech.css">
+        <!--[if (gte IE 9)|!(IE)]><!-->
+        <script src="{{.staticUrl}}/amazeui/js/jquery.min.js"></script>
+        <!--<![endif]-->
+
+        <!--[if lt IE 9]>
+        <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+        <script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+        <![endif]-->
+
+        <script src="{{.staticUrl}}/amazeui/js/amazeui.min.js"></script>
+        <script src="{{.staticUrl}}/amazeui/js/app.js"></script>
+        <script src="{{.staticUrl}}/js/highcharts/highcharts.js"></script>
+
+        <script src="{{.staticUrl}}/amazeui/js/amazeui.datatables.min.js"></script>
+        <script src="{{.staticUrl}}/amazeui/js/jquery.floatThead.min.js"></script>
+    </head>
+
+    <body>
+        <!--[if lte IE 9]>
+        <p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+          以获得更好的体验！</p>
+        <![endif]-->
+        <header class="am-topbar admin-header">
+            <div class="am-topbar-brand">
+                <a href="http://raysdk.com/game-package-manager/">
+                    <div class="am-hide-sm-only am-fl"><img src="http://7xlb7i.com2.z0.glb.qiniucdn.com/bmlogo-red2.png" ></div>
+                    GPM 雷尚游戏包管理系统
+                </a>
+            </div>
+
+            <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+            <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+                <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+                    <li class="am-dropdown" data-am-dropdown>
+                        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+                            <span class="am-icon-users"></span>  徐红成 <span class="am-icon-caret-down"></span>
+                        </a>
+                        <ul class="am-dropdown-content">
+                            <li><a href="http://raysdk.com/game-package-manager/login/showgroups"><span class="am-icon-user"></span> 用户设置</a></li>
+                            <li><a href="http://raysdk.com/game-package-manager/daily_apk"><span class="am-icon-cog"></span> 日更版本</a></li>
+                            <li><a href="http://raysdk.com/game-package-manager/login/logout"><span class="am-icon-power-off"></span> 账号注销</a></li>
+                        </ul>
+                    </li>
+                    <!--<li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>-->
+                </ul>
+            </div>
+        </header>
