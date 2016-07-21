@@ -1,37 +1,38 @@
 package controllers
 
 import (
-	_ "fmt"
-
-	"github.com/astaxie/beego"
+	"fmt"
 )
 
 type HomeController struct {
-	beego.Controller
+	BaseController
+}
+
+type MachineConfig struct {
+	Name   string
+	Ip     string
+	User   string
+	Port   int
+	Dbinfo string
+}
+
+func (this *HomeController) Construct() {
+	fmt.Println("--home construct--")
 }
 
 func (this *HomeController) Index() {
-	viewFile := "home/view_machine.html"
-	this.MyRender(viewFile)
+	this.CheckLogin()
+	this.getMachineConfig()
+	this.MyRender("home/view_machine.html")
 }
 
-func (this *HomeController) MyRender(viewFile string) {
-	this.Layout = "include/layout/classic.html"
-	this.TplName = viewFile
-	this.LayoutSections = make(map[string]string)
-	this.LayoutSections["headerFile"] = "include/header.html"
-	this.LayoutSections["footerFile"] = "include/footer.html"
-	this.LayoutSections["sidebarFile"] = "include/sidebar/classic_sidebar.html"
+func (this *HomeController) getMachineConfig() {
+	machineConfigData := map[string]MachineConfig{
+		"bi":        {Name: "bi", Ip: "s119.00.25.59", User: "00", Port: 10220},
+		"oa":        {Name: "oa", Ip: "s119.29.00.59", User: "00", Port: 10220},
+		"rsdk-set":  {Name: "rsdk-set", Ip: "s119.00.25.59", User: "00", Port: 10220},
+		"bi2-agent": {Name: "bi2-agent", Ip: "s119.00.25.59", User: "00", Port: 10220},
+	}
 
-	this.Data["staticUrl"] = this.PrepareData()
-	this.Render()
-}
-
-func (this *HomeController) PrepareData() string {
-	staticUrl := beego.AppConfig.String("static_url")
-	return staticUrl
-}
-
-func init() {
-
+	this.Data["machineConfigData"] = machineConfigData
 }
