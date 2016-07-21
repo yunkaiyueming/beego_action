@@ -4,22 +4,27 @@ import (
 	"fmt"
 
 	"beego_action/models"
-
-	"github.com/astaxie/beego"
 )
 
 type LoginController struct {
-	beego.Controller
+	BaseController
 }
 
-func (l *LoginController) Login() {
-	name := l.GetString("name")
-	pwd := l.GetString("pwd")
-	action := l.GetString("action")
+func (this *LoginController) Construct() {
+	fmt.Println("--login construct--")
+
+	//this.headerFile = "include/header.html"
+	this.layoutFile = "include/layout/main.html"
+	//this.footerFile = "include/footer.html"
+}
+
+func (this *LoginController) Login() {
+	name := this.GetString("name")
+	pwd := this.GetString("pwd")
+	action := this.GetString("action")
 	if action == "" {
-		fmt.Println("action empty")
-		l.TplName = "user/login.tpl"
-		l.Render()
+		this.Construct()
+		this.MyRender("login/view_login.html")
 		return
 	}
 
@@ -28,19 +33,39 @@ func (l *LoginController) Login() {
 
 	if user_info.Id == 0 {
 		fmt.Println("login false")
-		l.Data["error_msg"] = "user login error"
-		l.TplName = "user/login.tpl"
-		l.Render()
+		this.Data["error_msg"] = "user login error"
+		this.Construct()
+		this.MyRender("login/view_login.html")
 		return
 	} else {
-		l.SetSession("name", user_info.Name)
-		l.SetSession("id", user_info.Id)
-		fmt.Println("recording session")
-
-		//????跳转不成功
-		l.Redirect("user/welcome", 200)
+		this.SetSession("name", user_info.Name)
+		this.SetSession("id", user_info.Id)
+		this.Redirect("home/index", 200)
 		return
 	}
 
 	fmt.Println("bad log")
+}
+
+func (this *LoginController) Logout() {
+	name := this.GetSession("name")
+	if name != nil {
+		this.DestroySession()
+	}
+}
+
+func (this *LoginController) Seting() {
+	this.GetSessionUser()
+}
+
+func (this *LoginController) GetSessionUser() models.UserModel {
+	id := this.GetSession("id")
+	userInfo := models.UserModel{}
+	if id != nil {
+		userModel := &models.UserModel{}
+		userInfo = userModel.GetUserById(id.(int))
+	}
+
+	fmt.Println(userInfo)
+	return userInfo
 }

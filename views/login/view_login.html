@@ -1,0 +1,28 @@
+<div class="am-g">
+	<div class="am-u-lg-3 am-u-md-6 am-u-sm-centered">
+		<form action="{{urlfor "LoginController.Login"}}" method="post" class="am-form">
+			<fieldset>
+				<input type="hidden" name="action" value="login">
+				<div class="am-form-group am-form-icon am-form-feedback">
+					<input type="text" name="name" id="user_name" class="am-form-label" placeholder="用户名" >
+					<span class="am-icon-user"></span>
+				</div>
+				<div class="am-form-group am-form-icon am-form-feedback">
+					<input type="password" name="pwd" id="password" class="am-form-label" placeholder="密码" >
+					<span class="am-icon-lock"></span>
+				</div>
+				<div id="msg"></div>
+				<div class="am-form-group am-form-icon">
+					<i class="am-icon-key"></i>
+					<input type="submit" value="登 录" class="am-btn am-btn-primary am-btn-block am-form-label" >
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function () {
+		
+	});
+</script>
