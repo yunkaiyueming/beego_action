@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>RayJoy Game Package</title>
+        <title>机器管理系统</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="renderer" content="webkit">
         <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -38,9 +38,9 @@
         <![endif]-->
         <header class="am-topbar admin-header">
             <div class="am-topbar-brand">
-                <a href="http://raysdk.com/game-package-manager/">
-                    <div class="am-hide-sm-only am-fl"><img src="http://7xlb7i.com2.z0.glb.qiniucdn.com/bmlogo-red2.png" ></div>
-                    GPM 雷尚游戏包管理系统
+                <a href="{{.siteUrl}}">
+                    <div class="am-hide-sm-only am-fl"></div>
+                    Machine管理系统
                 </a>
             </div>
 
@@ -54,9 +54,8 @@
                             <span class="am-icon-users"></span>  徐红成 <span class="am-icon-caret-down"></span>
                         </a>
                         <ul class="am-dropdown-content">
-                            <li><a href="http://raysdk.com/game-package-manager/login/showgroups"><span class="am-icon-user"></span> 用户设置</a></li>
-                            <li><a href="http://raysdk.com/game-package-manager/daily_apk"><span class="am-icon-cog"></span> 日更版本</a></li>
-                            <li><a href="http://raysdk.com/game-package-manager/login/logout"><span class="am-icon-power-off"></span> 账号注销</a></li>
+                            <li><a href='{{urlfor "LoginController.Seting"}}'><span class="am-icon-user"></span> 用户设置</a></li>
+                            <li><a href="{{urlfor "LoginController.Logout"}}"><span class="am-icon-power-off"></span> 账号注销</a></li>
                         </ul>
                     </li>
                     <!--<li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>-->

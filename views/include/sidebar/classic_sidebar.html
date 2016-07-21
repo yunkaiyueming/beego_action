@@ -1,35 +1,38 @@
 <ul class="am-list admin-sidebar-list">
     <li class="admin-parent">
         <a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-nav-0'}">
-            <span class="am-icon-dashboard"></span> 包总览 <span class="am-icon-angle-right am-fr am-margin-right"></span>
+            <span class="am-icon-dashboard"></span> 机器管理 <span class="am-icon-angle-right am-fr am-margin-right"></span>
         </a>
         <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav-0">
             <li>
-                <a href="http://raysdk.com/game-package-manager/game_package/index?big_app_id=1009&sub_app_id=-1" class="am-active"><span class=""> 包管理</span></a>
+                <a href="{{.siteUrl}}/home/index" class="am-active"><span class=""> 机器配置</span></a>
             </li>
             <li>
-                <a href="http://raysdk.com/game-package-manager/game_package/game_package_search?big_app_id=1009&sub_app_id=-1" ><span class=""> 包搜索</span></a>
+                <a href="{{.siteUrl}}/performance/index"><span class=""> 机器性能</span></a>
+            </li>
+			<li>
+                <a href="{{.siteUrl}}/performance/get_go_env"><span class=""> GO环境</span></a>
             </li>
         </ul>
     <li class="admin-parent">
         <a class="am-cf " data-am-collapse="{target: '#collapse-nav-1'}">
-            <span class="am-icon-gift"></span> 包流转 <span class="am-icon-angle-right am-fr am-margin-right"></span>
+            <span class="am-icon-gift"></span> 接口管理 <span class="am-icon-angle-right am-fr am-margin-right"></span>
         </a>
         <ul class="am-list am-collapse admin-sidebar-sub " id="collapse-nav-1">
             <li>
-                <a href="http://raysdk.com/game-package-manager/game_package/package_flow_develop?big_app_id=1009&sub_app_id=-1" ><span class=""> 开发包</span></a>
+                <a href="{{.siteUrl}}/game_package/package_flow_develop?big_app_id=1009&sub_app_id=-1" ><span class=""> 开发包</span></a>
             </li>
             <li>
-                <a href="http://raysdk.com/game-package-manager/game_package/package_flow_test?big_app_id=1009&sub_app_id=-1" ><span class=""> 测试包</span></a>
+                <a href="{{.siteUrl}}/game_package/package_flow_test?big_app_id=1009&sub_app_id=-1" ><span class=""> 测试包</span></a>
             </li>
             <li>
-                <a href="http://raysdk.com/game-package-manager/game_package/package_flow_upward?big_app_id=1009&sub_app_id=-1" ><span class=""> 提审包</span></a>
+                <a href="{{.siteUrl}}/game_package/package_flow_upward?big_app_id=1009&sub_app_id=-1" ><span class=""> 提审包</span></a>
             </li>
             <li>
-                <a href="http://raysdk.com/game-package-manager/game_package/package_flow_online?big_app_id=1009&sub_app_id=-1" ><span class=""> 上线包</span></a>
+                <a href="{{.siteUrl}}/game_package/package_flow_online?big_app_id=1009&sub_app_id=-1" ><span class=""> 上线包</span></a>
             </li>
             <li>
-                <a href="http://raysdk.com/game-package-manager/game_package/package_flow_offline?big_app_id=1009&sub_app_id=-1" ><span class=""> 下线包</span></a>
+                <a href="{{.siteUrl}}/game_package/package_flow_offline?big_app_id=1009&sub_app_id=-1" ><span class=""> 下线包</span></a>
             </li>
         </ul>
     <li class="admin-parent">
@@ -38,10 +41,10 @@
         </a>
         <ul class="am-list am-collapse admin-sidebar-sub " id="collapse-nav-2">
             <li>
-                <a href="http://raysdk.com/game-package-manager/game_log/index?big_app_id=1009&sub_app_id=-1" ><span class=""> 我的记录</span></a>
+                <a href="{{.siteUrl}}/game_log/index?big_app_id=1009&sub_app_id=-1" ><span class=""> 我的记录</span></a>
             </li>
             <li>
-                <a href="http://raysdk.com/game-package-manager/game_log/all_log?big_app_id=1009&sub_app_id=-1" ><span class=""> 所有记录</span></a>
+                <a href="{{.siteUrl}}/game_log/all_log?big_app_id=1009&sub_app_id=-1" ><span class=""> 所有记录</span></a>
             </li>
         </ul>
     <li class="admin-parent">
@@ -50,10 +53,10 @@
         </a>
         <ul class="am-list am-collapse admin-sidebar-sub " id="collapse-nav-3">
             <li>
-                <a href="http://raysdk.com/game-package-manager/game_static/index?big_app_id=1009&sub_app_id=-1" ><span class=""> 包统计</span></a>
+                <a href="{{.siteUrl}}/game_static/index?big_app_id=1009&sub_app_id=-1" ><span class=""> 包统计</span></a>
             </li>
             <li>
-                <a href="http://raysdk.com/game-package-manager/game_set/mail_notice?big_app_id=1009&sub_app_id=-1" ><span class=""> 通知设置</span></a>
+                <a href="{{.siteUrl}}/game_set/mail_notice?big_app_id=1009&sub_app_id=-1" ><span class=""> 通知设置</span></a>
             </li>
         </ul>
 </ul>

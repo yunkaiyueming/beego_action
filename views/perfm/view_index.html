@@ -1,0 +1,48 @@
+<style>
+    .floatThead-table {background-color: #FFFFFF;}
+</style>
+<div class="am-cf am-padding">
+    <div class="am-fl am-cf">
+        <span class="am-badge am-badge-danger">子平台:</span>
+        <a href="{{.siteUrl}}/game_package/index?big_app_id=1009&sub_app_id=-1" class="am-badge am-badge-warning am-round">
+            所有平台		</a>
+        <a href="{{.siteUrl}}/game_package/index?big_app_id=1009&sub_app_id=1009">
+            <span class="am-badge am-badge-primary am-round" style="vertical-align: baseline">快用_iOS_飞流</span>
+        </a>
+        <a href="{{.siteUrl}}/game_package/index?big_app_id=1009&sub_app_id=10109">
+            <span class="am-badge am-badge-primary am-round" style="vertical-align: baseline">快用2_iOS_飞流</span>
+        </a>
+    </div>
+</div>
+
+<div class="am-g">
+    <div class="am-u-sm-12 am-scrollable-horizontal">
+        <table class="am-table am-table-bordered am-table-radius am-table-striped am-table-compact am-table-hover am-text-nowrap tablesorter">
+            <caption>机器信息</caption>
+			<tbody>
+				<tr style='background:#d0d0d0 !important'>
+					<td>{{.hostName}}</td>
+                </tr>
+				
+				<tr style='background:#d0d0d0 !important'>
+					<td>{{.numCpu}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="am-g">
+    <div class="am-u-sm-12 am-scrollable-horizontal">
+        <table class="am-table am-table-bordered am-table-radius am-table-striped am-table-compact am-table-hover am-text-nowrap tablesorter">
+            <caption>环境变量信息</caption>
+			<tbody>
+				{{range .envs}}
+ 				<tr style='background:#d0d0d0 !important'>
+					<td>{{.}}</td>
+                </tr>
+				{{end}}
+            </tbody>
+        </table>
+    </div>
+</div>

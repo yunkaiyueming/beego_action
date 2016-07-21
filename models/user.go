@@ -93,3 +93,14 @@ func (u *UserModel) CheckGetUser(check_name, check_pwd string) UserModel {
 
 	return UserModel{Id: id, Age: age, Name: name, Likes: likes, Pwd: pwd}
 }
+
+func (u *UserModel) GetUserById(id int) UserModel {
+	sql_str := fmt.Sprintf("select * from %s where id='%s'", USER_MODEL_TABLE_NAME, id)
+	row := db.QueryRow(sql_str)
+
+	var age int
+	var name, likes, pwd string
+	row.Scan(&id, &name, &age, &likes, &pwd)
+
+	return UserModel{Id: id, Age: age, Name: name, Likes: likes}
+}

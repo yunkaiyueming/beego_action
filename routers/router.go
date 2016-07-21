@@ -17,8 +17,11 @@ func init() {
 
 	beego.Router("game/get_game_json", &controllers.GameController{}, "get:GetGameJson")
 
+	//机器管理
 	beego.Router("/", &controllers.HomeController{}, "get:Index")
 	beego.Router("home/index", &controllers.HomeController{}, "get:Index")
+	beego.Router("performance/index", &controllers.PerformanceController{}, "get:Index")
+	beego.Router("performance/get_go_env", &controllers.PerformanceController{}, "get:GetGoEnv")
 
 	beego.Router("json/", &controllers.JsonTestController{}, "get:Get")
 	beego.Router("json/claw_url_msg", &controllers.JsonTestController{}, "get:ClawUrlMsg")
@@ -28,7 +31,10 @@ func init() {
 	beego.Router("qiniu/get_down_file_url", &controllers.QiniuController{}, "get:GetDownFileUrl")
 	beego.Router("qiniu/simple_upload_file", &controllers.QiniuController{}, "get:SimpleUploadFile")
 
-	beego.Router("login", &controllers.LoginController{}, "get:Login")
+	//登录,权限相关
+	beego.Router("login/login", &controllers.LoginController{}, "get,post:Login")
+	beego.Router("login/logout", &controllers.LoginController{}, "get:Logout")
+	beego.Router("login/seting", &controllers.LoginController{}, "get:Seting")
 
 	beego.Router("article/test", &controllers.ArticleController{}, "get:TestFunc")
 
