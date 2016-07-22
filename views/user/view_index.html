@@ -1,0 +1,52 @@
+<div class="am-tab-panel">
+<form class="am-form" role="form" method="post">
+	<h2 class="form-signin-heading" style="margin-left:35%">用户信息</h2>
+
+	<div class="am-g am-margin-top">
+		<div class="am-u-sm-4 am-u-md-2 am-text-right">ID:</div>
+		<div class="am-u-sm-8 am-u-md-4">
+			<input type="text" disabled="disabled" class="col-xs-10 col-sm-5" name="id" value="{{.userInfo.Id}}"/>
+		</div>
+		<div class="am-hide-sm-only am-u-md-6"></div>
+	</div>
+
+	<div class="am-g am-margin-top">
+		<div class="am-u-sm-4 am-u-md-2 am-text-right">Name:</div>
+		<div class="am-u-sm-8 am-u-md-4">
+			<input type="text" class="col-xs-10 col-sm-5" name="name" value="{{.userInfo.Name}}"/>
+		</div>
+		<div class="am-hide-sm-only am-u-md-6"></div>
+	</div>
+
+	<div class="am-g am-margin-top">
+		<div class="am-u-sm-4 am-u-md-2 am-text-right">Age</div>
+		<div class="am-u-sm-8 am-u-md-4">
+			<input type="text" class="col-xs-10 col-sm-5" name="age"  required="required" value="{{.userInfo.Age}}" />
+			<div id="sub_app_name_res"></div>
+		</div>
+		<div class="am-hide-sm-only am-u-md-6"><font color="red">*</font></div>
+	</div>
+
+	<div class="am-g am-margin-top">
+		<div class="am-u-sm-4 am-u-md-2 am-text-right">likes: </div>
+		<div class="am-u-sm-8 am-u-md-4">
+			<input type="text" class="col-xs-10 col-sm-5" name="likes" required="required" value="{{.userInfo.Likes}}"/>
+		</div>
+		<div class="am-hide-sm-only am-u-md-6"><font color="red">*</font></div>
+	</div>
+
+	<div class="am-g am-margin-top">
+		<div class="am-u-sm-4 am-u-md-2 am-text-right"> &nbsp; </div>
+		<div class="am-u-sm-8 am-u-md-4">
+			<button class="am-btn am-btn-secondary am-radius" type="submit" id="data_submit_btn">Submit</button>
+			&nbsp; &nbsp; &nbsp;
+			<button class="am-btn am-btn-default am-radius" type="reset">Reset</button>
+			&nbsp; &nbsp; &nbsp;
+			<a onclick="javascript:window.history.go(-1);"><input type="button" class="am-btn am-btn-warning am-radius" value="Back"></a>
+		</div>
+		<div class="am-hide-sm-only am-u-md-6"></div>
+	</div>
+
+	<input type="hidden" name="action" value="1">
+</form>
+</div>

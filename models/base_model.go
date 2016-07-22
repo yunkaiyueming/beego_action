@@ -5,7 +5,6 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/config"
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -49,15 +48,6 @@ func GetDbConfig() map[string]string {
 
 func CheckError(err error) {
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
-}
-
-func Record_log(msg_level, msg string) {
-	beego.SetLogger("file", `{"filename":"E:/GO_PATH/src/beego_action/test.log"}`)
-	//beego.BeeLogger.DelLogger("console")
-	beego.SetLevel(beego.LevelInformational)
-	beego.SetLogFuncCall(true)
-
-	beego.Emergency(msg)
 }

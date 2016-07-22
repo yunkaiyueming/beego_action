@@ -11,8 +11,7 @@ func init() {
 	beego.Router("user/index", &controllers.UserController{}, "get:GetAllUser")
 	beego.Router("user/update_user", &controllers.UserController{}, "*:UpdateUser")
 	beego.Router("user/delete_user", &controllers.UserController{}, "get,post:DeleteUser")
-	beego.Router("user/add_user", &controllers.UserController{}, "get:AddUser;post:UpdateUser")
-	beego.Router("user/get_config_data", &controllers.UserController{}, "get:GetConfigData")
+	beego.Router("user/add_user", &controllers.UserController{}, "get:AddUser")
 
 	beego.Router("game/get_game_json", &controllers.GameController{}, "get:GetGameJson")
 

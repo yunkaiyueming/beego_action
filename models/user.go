@@ -1,7 +1,6 @@
 package models
 
 import (
-	"database/sql"
 	"fmt"
 )
 
@@ -21,6 +20,7 @@ func init() {
 
 func (u *UserModel) GetAllUser() ([]UserModel, error) {
 	sqlStr := fmt.Sprintf("select * from %s", USER_MODEL_TABLE_NAME)
+	fmt.Println(sqlStr)
 	rows, err := db.Query(sqlStr)
 	CheckError(err)
 
@@ -43,11 +43,11 @@ func (u *UserModel) GetAllUser() ([]UserModel, error) {
 }
 
 func (u *UserModel) AddUser() int64 {
-	stmt, err := db.Prepare(`INSERT users(name,age,likes) values (?,?,?)`)
+	stmt, err := db.Prepare(`INSERT users(name,age,likes,pwd) values (?,?,?,?)`)
 	defer stmt.Close()
 	CheckError(err)
 
-	res, err := stmt.Exec("cc", 20, "book,food,apple")
+	res, err := stmt.Exec("cc", 20, "book,food,apple", "")
 	CheckError(err)
 
 	id, err := res.LastInsertId()
@@ -57,13 +57,10 @@ func (u *UserModel) AddUser() int64 {
 }
 
 //删除数据
-func DeleteUser() {
-	db, err := sql.Open("mysql", "root:@/test?charset=utf8")
+func (u *UserModel) DeleteUserById(id int) {
+	stmt, err := db.Prepare(`DELETE FROM users WHERE id=?`)
 	CheckError(err)
-
-	stmt, err := db.Prepare(`DELETE FROM user WHERE user_id=?`)
-	CheckError(err)
-	res, err := stmt.Exec(1)
+	res, err := stmt.Exec(id)
 	CheckError(err)
 	num, err := res.RowsAffected()
 	CheckError(err)
@@ -71,10 +68,12 @@ func DeleteUser() {
 }
 
 //更新数据
-func UpdateUser() {
-	stmt, err := db.Prepare(`UPDATE user SET user_age=?,user_sex=? WHERE user_id=?`)
+func (u *UserModel) UpdateUserById(id int, data map[string]string) {
+	stmt, err := db.Prepare(`UPDATE users SET name=?,age=?,likes=? WHERE id=?`)
 	CheckError(err)
-	res, err := stmt.Exec(21, 2, 1)
+
+	fmt.Println(data)
+	res, err := stmt.Exec(data["name"], data["age"], data["likes"], id)
 	CheckError(err)
 	num, err := res.RowsAffected()
 	CheckError(err)
@@ -90,12 +89,12 @@ func (u *UserModel) CheckGetUser(check_name, check_pwd string) UserModel {
 	var name, likes, pwd string
 
 	row.Scan(&id, &name, &age, &likes, &pwd)
-
 	return UserModel{Id: id, Age: age, Name: name, Likes: likes, Pwd: pwd}
 }
 
 func (u *UserModel) GetUserById(id int) UserModel {
-	sql_str := fmt.Sprintf("select * from %s where id='%s'", USER_MODEL_TABLE_NAME, id)
+	sql_str := fmt.Sprintf("select * from %s where id='%d'", USER_MODEL_TABLE_NAME, id)
+	fmt.Println(sql_str)
 	row := db.QueryRow(sql_str)
 
 	var age int
