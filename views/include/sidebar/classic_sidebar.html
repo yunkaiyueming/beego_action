@@ -20,43 +20,38 @@
         </a>
         <ul class="am-list am-collapse admin-sidebar-sub " id="collapse-nav-1">
             <li>
-                <a href="{{.siteUrl}}/game_package/package_flow_develop?big_app_id=1009&sub_app_id=-1" ><span class=""> 开发包</span></a>
+                <a href="{{.siteUrl}}/http/get" ><span class=""> Get接口</span></a>
             </li>
             <li>
-                <a href="{{.siteUrl}}/game_package/package_flow_test?big_app_id=1009&sub_app_id=-1" ><span class=""> 测试包</span></a>
+                <a href="{{.siteUrl}}/http/post" ><span class=""> Post接口</span></a>
             </li>
-            <li>
-                <a href="{{.siteUrl}}/game_package/package_flow_upward?big_app_id=1009&sub_app_id=-1" ><span class=""> 提审包</span></a>
-            </li>
-            <li>
-                <a href="{{.siteUrl}}/game_package/package_flow_online?big_app_id=1009&sub_app_id=-1" ><span class=""> 上线包</span></a>
-            </li>
-            <li>
-                <a href="{{.siteUrl}}/game_package/package_flow_offline?big_app_id=1009&sub_app_id=-1" ><span class=""> 下线包</span></a>
+			<li>
+                <a href="{{.siteUrl}}/http/put" ><span class=""> Put接口</span></a>
             </li>
         </ul>
     <li class="admin-parent">
         <a class="am-cf " data-am-collapse="{target: '#collapse-nav-2'}">
-            <span class="am-icon-edit"></span> 包日志 <span class="am-icon-angle-right am-fr am-margin-right"></span>
+            <span class="am-icon-edit"></span> 数据管理 <span class="am-icon-angle-right am-fr am-margin-right"></span>
         </a>
         <ul class="am-list am-collapse admin-sidebar-sub " id="collapse-nav-2">
             <li>
-                <a href="{{.siteUrl}}/game_log/index?big_app_id=1009&sub_app_id=-1" ><span class=""> 我的记录</span></a>
+                <a href="{{.siteUrl}}/user/index" ><span class=""> 用户信息</span></a>
             </li>
-            <li>
-                <a href="{{.siteUrl}}/game_log/all_log?big_app_id=1009&sub_app_id=-1" ><span class=""> 所有记录</span></a>
+			<li>
+                <a href="{{.siteUrl}}/user/index" ><span class=""> Nginx日志</span></a>
             </li>
         </ul>
-    <li class="admin-parent">
+
+   	<li class="admin-parent">
         <a class="am-cf " data-am-collapse="{target: '#collapse-nav-3'}">
-            <span class="am-icon-bar-chart"></span> 其他 <span class="am-icon-angle-right am-fr am-margin-right"></span>
+            <span class="am-icon-bar-chart"></span> 文件模块 <span class="am-icon-angle-right am-fr am-margin-right"></span>
         </a>
         <ul class="am-list am-collapse admin-sidebar-sub " id="collapse-nav-3">
             <li>
-                <a href="{{.siteUrl}}/game_static/index?big_app_id=1009&sub_app_id=-1" ><span class=""> 包统计</span></a>
+                <a href="{{.siteUrl}}/file/index" ><span class=""> 文件目录</span></a>
             </li>
             <li>
-                <a href="{{.siteUrl}}/game_set/mail_notice?big_app_id=1009&sub_app_id=-1" ><span class=""> 通知设置</span></a>
+                <a href="{{.siteUrl}}/file/get_content" ><span class=""> 文件内容</span></a>
             </li>
         </ul>
 </ul>

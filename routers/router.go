@@ -7,13 +7,12 @@ import (
 )
 
 func init() {
-	//自定义方法及 RESTful 规则
-	beego.Router("user/welcome", &controllers.MainController{})
-	beego.Router("user/get_all_user", &controllers.MainController{}, "get:GetAllUser")
-	beego.Router("user/update_user", &controllers.MainController{}, "*:UpdateUser")
-	beego.Router("user/delete_user", &controllers.MainController{}, "get,post:DeleteUser")
-	beego.Router("user/add_user", &controllers.MainController{}, "get:AddUser;post:UpdateUser")
-	beego.Router("user/get_config_data", &controllers.MainController{}, "get:GetConfigData")
+	//信息管理
+	beego.Router("user/index", &controllers.UserController{}, "get:GetAllUser")
+	beego.Router("user/update_user", &controllers.UserController{}, "*:UpdateUser")
+	beego.Router("user/delete_user", &controllers.UserController{}, "get,post:DeleteUser")
+	beego.Router("user/add_user", &controllers.UserController{}, "get:AddUser;post:UpdateUser")
+	beego.Router("user/get_config_data", &controllers.UserController{}, "get:GetConfigData")
 
 	beego.Router("game/get_game_json", &controllers.GameController{}, "get:GetGameJson")
 
@@ -22,6 +21,9 @@ func init() {
 	beego.Router("home/index", &controllers.HomeController{}, "get:Index")
 	beego.Router("performance/index", &controllers.PerformanceController{}, "get:Index")
 	beego.Router("performance/get_go_env", &controllers.PerformanceController{}, "get:GetGoEnv")
+
+	//接口管理
+	beego.Router("http/get", &controllers.HttpController{}, "get:Get")
 
 	beego.Router("json/", &controllers.JsonTestController{}, "get:Get")
 	beego.Router("json/claw_url_msg", &controllers.JsonTestController{}, "get:ClawUrlMsg")

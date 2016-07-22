@@ -1,6 +1,7 @@
 package helpers
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -11,19 +12,20 @@ import (
 func My_http_get(url string) string {
 	resp, err := http.Get(url)
 	if err != nil {
-		return "error occur"
-		//fmt.Println("error occur")
+		ret := map[string]string{"code": "500", "msg": "get error occur"}
+		ret_json, _ := json.Marshal(ret)
+		return string(ret_json)
 	}
 
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return "body error occur"
-		//fmt.Println("body error occur")
+		ret := map[string]string{"code": "500", "msg": "body error occur"}
+		ret_json, _ := json.Marshal(ret)
+		return string(ret_json)
 	}
 
 	return string(body)
-	//fmt.Println(string(body))
 }
 
 //post 第二个参数要设置成”application/x-www-form-urlencoded”，否则post参数无法传递
@@ -94,4 +96,27 @@ func ClawResponseHeader(url string) http.Header {
 	//	for key, val := range response_headers {
 	//		fmt.Println(key, val)
 	//	}
+}
+
+func GetAllResponse(url string) http.Response {
+	resp, _ := http.Get(url)
+	return *resp
+}
+
+func HttpGetDo(url string, req *http.Request) *http.Response {
+	client := &http.Client{}
+	real_req, _ := http.NewRequest("GET", url, nil)
+
+	for key, val := range req.Header {
+		real_req.Header.Set(key, val[0])
+	}
+
+	resp, _ := client.Do(real_req)
+	return resp
+}
+
+func CheckError(err error) {
+	if err != nil {
+		panic(err)
+	}
 }
