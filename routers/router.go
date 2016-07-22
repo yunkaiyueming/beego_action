@@ -13,8 +13,6 @@ func init() {
 	beego.Router("user/delete_user", &controllers.UserController{}, "get,post:DeleteUser")
 	beego.Router("user/add_user", &controllers.UserController{}, "get:AddUser")
 
-	beego.Router("game/get_game_json", &controllers.GameController{}, "get:GetGameJson")
-
 	//机器管理
 	beego.Router("/", &controllers.HomeController{}, "get:Index")
 	beego.Router("home/index", &controllers.HomeController{}, "get:Index")
