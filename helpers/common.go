@@ -120,16 +120,3 @@ func CheckError(err error) {
 		panic(err)
 	}
 }
-
-func MySessionOp() {
-	v := this.GetSession("pv")
-	if v != nil {
-		v = v.(int) + 1
-	} else {
-		v = int(1)
-	}
-	this.SetSession("pv", v)
-
-	this.SessionRegenerateID()
-	fmt.Println(v)
-}

@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"beego_action/helpers"
+	"beego_action/models"
 	"encoding/json"
 	"fmt"
 
@@ -46,4 +47,11 @@ func (j *JsonTestController) ClawResponseHeader() {
 	headers := helpers.ClawResponseHeader("http://www.cnblogs.com")
 	json_byte, _ := json.Marshal(headers)
 	fmt.Println(string(json_byte))
+}
+
+func (g *JsonTestController) GetGameJson() {
+	GameModel := &models.GameModel{}
+	GameInfoJson := GameModel.GetGameJson()
+	g.Data["json"] = GameInfoJson
+	g.ServeJSON()
 }

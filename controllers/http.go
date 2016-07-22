@@ -32,6 +32,6 @@ func (this *HttpController) Get() {
 	this.Data["proto"] = response.Proto
 	this.Data["code"] = response.Status
 	this.Data["rep_headers"] = response.Header
-	this.Data["ret"] = body
+	this.Data["ret"] = string(body)
 	this.MyRender("http/view_get.html")
 }
