@@ -30,6 +30,7 @@ func init() {
 	beego.Router("qiniu/get_files_msg", &controllers.QiniuController{}, "get:GetFilesMsg")
 	beego.Router("qiniu/get_down_file_url", &controllers.QiniuController{}, "get:GetDownFileUrl")
 	beego.Router("qiniu/simple_upload_file", &controllers.QiniuController{}, "get:SimpleUploadFile")
+	beego.Router("qiniu/get_bucket_files", &controllers.QiniuController{}, "get:GetBucketFiles")
 
 	//登录,权限相关
 	beego.Router("login/login", &controllers.LoginController{}, "get,post:Login")

@@ -15,16 +15,22 @@ type QiniuController struct {
 }
 
 var (
-	//设置需要操作的空间
-	bucket = "game-package-world-war"
-	//设置需要操作的文件的key
-	key        = "icon512.png"
-	domain     = "xxxx.com2.z0.glb.qiniucdn.com"
-	access_key = ""
-	select_key = ""
+	bucket     string
+	domain     string
+	access_key string
+	select_key string
+	key        = "README.md"
 )
 
-func (q *QiniuController) GetFilesMsg() {
+func init() {
+	bucket = beego.AppConfig.String("bucket")
+	domain = beego.AppConfig.String("domain")
+	access_key = beego.AppConfig.String("qiniu_ak")
+	select_key = beego.AppConfig.String("qiniu_sk")
+}
+
+//获取文件信息
+func (this *QiniuController) GetFilesMsg() {
 	conf.ACCESS_KEY = access_key
 	conf.SECRET_KEY = select_key
 
@@ -33,6 +39,7 @@ func (q *QiniuController) GetFilesMsg() {
 	p := c.Bucket(bucket)
 
 	//调用Stat方法获取文件的信息
+	key = "640.jpg"
 	entry, err := p.Stat(nil, key)
 	//打印出错时返回的信息
 	if err != nil {
@@ -41,16 +48,18 @@ func (q *QiniuController) GetFilesMsg() {
 
 	file_msg, _ := json.Marshal(entry)
 	fmt.Println(string(file_msg))
-	q.Data["json"] = entry
-	q.ServeJSON()
+	this.Data["json"] = entry
+	this.ServeJSON()
 }
 
-func (q *QiniuController) GetDownFileUrl() {
+//获取下载URL
+func (this *QiniuController) GetDownFileUrl() {
 	down_fiel_url := downloadUrl(domain, key)
 	fmt.Println(down_fiel_url)
+	this.Data["json"] = down_fiel_url
+	this.ServeJSON()
 }
 
-//调用封装好的downloadUrl方法生成一个下载链接
 func downloadUrl(domain, key string) string {
 	//调用MakeBaseUrl()方法将domain,key处理成http://domain/key的形式
 	baseUrl := kodo.MakeBaseUrl(domain, key)
@@ -67,8 +76,9 @@ type PutRet struct {
 	Key  string `json:"key"`
 }
 
-func (q *QiniuController) SimpleUploadFile() {
-	filepath := "E:/www2/GitHub/gitbook_test/README.md"
+//简单上传文件
+func (this *QiniuController) SimpleUploadFile() {
+	filepath := "E:/GO_PATH/src/bit-every-day/README.md"
 	simpleUploadFile(filepath)
 }
 
@@ -106,4 +116,23 @@ func simpleUploadFile(filepath string) {
 		fmt.Println("io.Put failed:", res)
 		return
 	}
+}
+
+func (this *QiniuController) GetBucketFiles() {
+	conf.ACCESS_KEY = access_key
+	conf.SECRET_KEY = select_key
+
+	//new一个Bucket对象
+	c := kodo.New(0, nil)
+	p := c.Bucket(bucket)
+
+	//调用List方法，第二个参数是前缀,第三个参数是delimiter,第四个参数是marker，第五个参数是列举条数
+	ListItem, _, _, _ := p.List(nil, "", "", "", 100)
+
+	//循环遍历每个操作的返回结果
+	for _, item := range ListItem {
+		fmt.Println(item.Key, item.Fsize)
+	}
+	this.Data["json"] = ListItem
+	this.ServeJSON()
 }
