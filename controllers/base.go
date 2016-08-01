@@ -15,20 +15,48 @@ type BaseController struct {
 	footerFile  string
 }
 
-func (this *BaseController) Construct() {
-	fmt.Println("--base construct--")
-	this.sidebarFile = "include/sidebar/classic_sidebar.html"
-	this.headerFile = "include/header.html"
-	this.layoutFile = "include/layout/classic.html"
-	this.footerFile = "include/footer.html"
+type RenderInterface interface {
+	MyRender(string)
 }
 
-func (this *BaseController) MyRender(viewFile string) {
-	this.Construct()
+func (this *BaseController) Construct(layoutFile ...map[string]string) {
+	fmt.Println("--base construct--")
+	fmt.Println(layoutFile)
+
+	if len(layoutFile) > 0 {
+		this.sidebarFile = layoutFile[0]["sidebarFile"]
+		this.headerFile = layoutFile[0]["headerFile"]
+		this.layoutFile = layoutFile[0]["layoutFile"]
+		this.footerFile = layoutFile[0]["footerFile"]
+	} else {
+		this.sidebarFile = "include/sidebar/classic_sidebar.html"
+		this.headerFile = "include/header.html"
+		this.layoutFile = "include/layout/classic.html"
+		this.footerFile = "include/footer.html"
+	}
+
+}
+
+func (this *BaseController) MyRender(viewFile string, layoutFile ...map[string]string) {
+	this.Construct(layoutFile...)
 
 	this.Layout = this.layoutFile
 	this.TplName = viewFile
 
+	this.LayoutSections = make(map[string]string)
+	this.LayoutSections["headerFile"] = this.headerFile
+	this.LayoutSections["footerFile"] = this.footerFile
+	this.LayoutSections["sidebarFile"] = this.sidebarFile
+
+	this.PrepareViewData()
+	this.Render()
+}
+
+func (this *BaseController) MyRender2(viewFile string) {
+	this.Layout = this.layoutFile
+	this.TplName = viewFile
+
+	fmt.Println(this.Layout)
 	this.LayoutSections = make(map[string]string)
 	this.LayoutSections["headerFile"] = this.headerFile
 	this.LayoutSections["footerFile"] = this.footerFile

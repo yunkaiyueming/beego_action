@@ -1,0 +1,59 @@
+<style>
+    .floatThead-table {background-color: #FFFFFF;}
+</style>
+<div class="am-cf am-padding">
+    <div class="am-fl am-cf">
+        <span class="am-badge am-badge-danger">子平台:</span>
+        <a href="{{.siteUrl}}/game_package/index?big_app_id=1009&sub_app_id=-1" class="am-badge am-badge-warning am-round">
+            所有平台</a>
+        <a href="{{.siteUrl}}/game_package/index?big_app_id=1009&sub_app_id=1009">
+            <span class="am-badge am-badge-primary am-round" style="vertical-align: baseline">快用_iOS_飞流</span>
+        </a>
+        <a href="{{.siteUrl}}/game_package/index?big_app_id=1009&sub_app_id=10109">
+            <span class="am-badge am-badge-primary am-round" style="vertical-align: baseline">快用2_iOS_飞流</span>
+        </a>
+    </div>
+</div>
+
+<div class="am-g">
+    <div class="am-u-sm-12 am-scrollable-horizontal">
+        <table class="am-table am-table-bordered am-table-radius am-table-striped am-table-compact am-table-hover am-text-nowrap tablesorter">
+            <thead>
+                <tr>
+                    <th>Key<i class="fa fa-sort"></i></th>								
+                    <th>Val<i class="fa fa-sort"></i></th>								
+                </tr>
+            </thead>
+            <tbody>
+				{{range $key,$val :=.log_infos}}
+					<tr><td>{{$key}}</td><td>{{$val}}</td></tr>
+ 				{{end}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<br><a href="{{urlfor "UserController.AddUser"}}"><input type="button" class="am-btn am-btn-sm am-btn-primary am-radius" value="新增用户"></a>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        var table = $('.tablesorter').dataTable({
+            "bPaginate": false, //翻页功能
+            "bLengthChange": false, //改变每页显示数据数量
+            "bFilter": false, //过滤功能
+            "bSort": true, //排序功能
+            "bInfo": false, //页脚信息
+            "bAutoWidth": false, //自动宽度
+            "bProcessing": false, //是否显示“正在处理”这个提示信息
+            "aaSorting": [0, "desc"], //默认排序列
+            "columnDefs": [
+                {type: 'formatted-num', targets: '_all'}
+            ]
+        });
+        var $floattable = $('.tablesorter');
+        $floattable.floatThead();
+        $('.am-scrollable-horizontal').on('scroll', function (e) {
+            $floattable.floatThead('reflow');
+        });
+    });
+</script>

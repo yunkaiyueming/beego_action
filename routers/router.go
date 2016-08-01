@@ -12,6 +12,7 @@ func init() {
 	beego.Router("user/update_user", &controllers.UserController{}, "*:UpdateUser")
 	beego.Router("user/delete_user", &controllers.UserController{}, "get,post:DeleteUser")
 	beego.Router("user/add_user", &controllers.UserController{}, "get:AddUser")
+	beego.Router("user/nginx", &controllers.UserController{}, "get:Nginx")
 
 	//机器管理
 	beego.Router("/", &controllers.HomeController{}, "get:Index")
@@ -30,7 +31,9 @@ func init() {
 	beego.Router("qiniu/get_files_msg", &controllers.QiniuController{}, "get:GetFilesMsg")
 	beego.Router("qiniu/get_down_file_url", &controllers.QiniuController{}, "get:GetDownFileUrl")
 	beego.Router("qiniu/simple_upload_file", &controllers.QiniuController{}, "get:SimpleUploadFile")
-	beego.Router("qiniu/get_bucket_files", &controllers.QiniuController{}, "get:GetBucketFiles")
+	beego.Router("qiniu/index", &controllers.QiniuController{}, "get:GetBucketFiles")
+	beego.Router("file/get_file_con", &controllers.FileController{}, "get:GetFileCon")
+	beego.Router("file/list_dir", &controllers.FileController{}, "get:ListDir")
 
 	//登录,权限相关
 	beego.Router("login/login", &controllers.LoginController{}, "get,post:Login")

@@ -11,11 +11,21 @@ type LoginController struct {
 }
 
 func (this *LoginController) Construct() {
-	fmt.Println("--login construct--")
-
-	//this.headerFile = "include/header.html"
+	this.sidebarFile = "include/sidebar/classic_sidebar.html"
+	this.headerFile = "include/header.html"
 	this.layoutFile = "include/layout/main.html"
-	//this.footerFile = "include/footer.html"
+	this.footerFile = "include/footer.html"
+}
+
+//调用NewRender或MyRender2
+func (this *LoginController) NewRender(viewFile string) {
+	layoutData := map[string]string{
+		"layoutFile":  "include/layout/main.html",
+		"headerFile":  "include/header.html",
+		"sidebarFile": "",
+		"footerFile":  "include/footer.html",
+	}
+	this.MyRender(viewFile, layoutData)
 }
 
 func (this *LoginController) Login() {
@@ -24,7 +34,7 @@ func (this *LoginController) Login() {
 	action := this.GetString("action")
 	if action == "" {
 		this.Construct()
-		this.MyRender("login/view_login.html")
+		this.MyRender2("login/view_login.html")
 		return
 	}
 
@@ -34,8 +44,8 @@ func (this *LoginController) Login() {
 	if user_info.Id == 0 {
 		fmt.Println("login false")
 		this.Data["error_msg"] = "user login error"
-		this.Construct()
-		this.MyRender("login/view_login.html")
+
+		this.NewRender("login/view_login.html")
 		return
 	} else {
 		this.SetSession("name", user_info.Name)

@@ -1,8 +1,12 @@
 package controllers
 
 import (
+	"beego_action/helpers"
 	"beego_action/models"
 	"fmt"
+	"strings"
+
+	"github.com/garyburd/redigo/redis"
 )
 
 type UserController struct {
@@ -67,4 +71,39 @@ func (this *UserController) DeleteUser() {
 	u := &models.UserModel{}
 	u.DeleteUserById(id)
 	this.Ctx.WriteString("hello deleteuser")
+}
+
+func (this *UserController) Nginx() {
+	redis_con := helpers.GetCon()
+
+	log_keys, err := redis.Strings(redis_con.Do("keys", "access_log:*"))
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	log_infos := make(map[string]string, 200)
+	for _, log_key := range log_keys {
+		log_item_str, _ := redis.Strings(redis_con.Do("hGetAll", log_key))
+		log_infos[log_key] = strings.Join(log_item_str, "; ")
+
+		if len(log_infos) > 30 {
+			break
+		}
+	}
+
+	item_descs := []string{
+		"client_ip",
+		"request_time",
+		"request_url",
+		"status",
+		"body_bytes_sent",
+		"http_referer",
+		"user_agent",
+		"http_x_forwarded_for",
+	}
+
+	this.Data["log_infos"] = log_infos
+	this.Data["item_descs"] = item_descs
+
+	this.MyRender("user/view_nginx.html")
 }
