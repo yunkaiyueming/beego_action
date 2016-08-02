@@ -12,7 +12,16 @@ type HttpController struct {
 }
 
 func (this *HttpController) Construct() {
-	fmt.Println("--http construct--")
+	this.headerFile = "include/header.html"
+	this.footerFile = "include/footer.html"
+	this.layoutFile = "include/layout/classic.html"
+	this.sidebarFile = "include/sidebar/classic_sidebar.html"
+}
+
+func (this *HttpController) MyRender(viewFile string) {
+	this.Construct()
+	this.BaseController.MyRender(viewFile)
+	fmt.Println("http render")
 }
 
 func (this *HttpController) Get() {

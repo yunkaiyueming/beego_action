@@ -3,6 +3,8 @@ package controllers
 import (
 	"fmt"
 
+	"beego_action/models"
+
 	"github.com/astaxie/beego"
 )
 
@@ -15,31 +17,12 @@ type BaseController struct {
 	footerFile  string
 }
 
-type RenderInterface interface {
-	MyRender(string)
+func (this *BaseController) Prepare() {
+	fmt.Println("prepare")
+	this.PrepareViewData()
 }
 
-func (this *BaseController) Construct(layoutFile ...map[string]string) {
-	fmt.Println("--base construct--")
-	fmt.Println(layoutFile)
-
-	if len(layoutFile) > 0 {
-		this.sidebarFile = layoutFile[0]["sidebarFile"]
-		this.headerFile = layoutFile[0]["headerFile"]
-		this.layoutFile = layoutFile[0]["layoutFile"]
-		this.footerFile = layoutFile[0]["footerFile"]
-	} else {
-		this.sidebarFile = "include/sidebar/classic_sidebar.html"
-		this.headerFile = "include/header.html"
-		this.layoutFile = "include/layout/classic.html"
-		this.footerFile = "include/footer.html"
-	}
-
-}
-
-func (this *BaseController) MyRender(viewFile string, layoutFile ...map[string]string) {
-	this.Construct(layoutFile...)
-
+func (this *BaseController) MyRender(viewFile string) {
 	this.Layout = this.layoutFile
 	this.TplName = viewFile
 
@@ -47,22 +30,6 @@ func (this *BaseController) MyRender(viewFile string, layoutFile ...map[string]s
 	this.LayoutSections["headerFile"] = this.headerFile
 	this.LayoutSections["footerFile"] = this.footerFile
 	this.LayoutSections["sidebarFile"] = this.sidebarFile
-
-	this.PrepareViewData()
-	this.Render()
-}
-
-func (this *BaseController) MyRender2(viewFile string) {
-	this.Layout = this.layoutFile
-	this.TplName = viewFile
-
-	fmt.Println(this.Layout)
-	this.LayoutSections = make(map[string]string)
-	this.LayoutSections["headerFile"] = this.headerFile
-	this.LayoutSections["footerFile"] = this.footerFile
-	this.LayoutSections["sidebarFile"] = this.sidebarFile
-
-	this.PrepareViewData()
 	this.Render()
 }
 
@@ -80,7 +47,19 @@ func (this *BaseController) CheckLogin() bool {
 	if id != nil && name != nil {
 		return true
 	} else {
-		this.Redirect("home/index", 200)
+		this.Redirect("home/index", 302)
 		return false
 	}
+}
+
+func (this *BaseController) GetSessionUser() models.UserModel {
+	id := this.GetSession("id")
+	userInfo := models.UserModel{}
+	if id != nil {
+		userModel := &models.UserModel{}
+		userInfo = userModel.GetUserById(id.(int))
+	}
+
+	fmt.Println(userInfo)
+	return userInfo
 }

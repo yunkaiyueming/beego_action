@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"fmt"
+	_ "fmt"
 )
 
 type HomeController struct {
@@ -17,7 +17,15 @@ type MachineConfig struct {
 }
 
 func (this *HomeController) Construct() {
-	fmt.Println("--home construct--")
+	this.headerFile = "include/header.html"
+	this.footerFile = "include/footer.html"
+	this.layoutFile = "include/layout/classic.html"
+	this.sidebarFile = "include/sidebar/classic_sidebar.html"
+}
+
+func (this *HomeController) MyRender(viewFile string) {
+	this.Construct()
+	this.BaseController.MyRender(viewFile)
 }
 
 func (this *HomeController) Index() {

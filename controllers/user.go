@@ -13,6 +13,18 @@ type UserController struct {
 	BaseController
 }
 
+func (this *UserController) Construct() {
+	this.headerFile = "include/header.html"
+	this.footerFile = "include/footer.html"
+	this.layoutFile = "include/layout/classic.html"
+	this.sidebarFile = "include/sidebar/classic_sidebar.html"
+}
+
+func (this *UserController) MyRender(viewFile string) {
+	this.Construct()
+	this.BaseController.MyRender(viewFile)
+}
+
 func (this *UserController) Get() {
 	id, _ := this.GetInt("id")
 	u := &models.UserModel{}

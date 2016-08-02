@@ -10,6 +10,18 @@ type PerformanceController struct {
 	BaseController
 }
 
+func (this *PerformanceController) Construct() {
+	this.headerFile = "include/header.html"
+	this.footerFile = "include/footer.html"
+	this.layoutFile = "include/layout/classic.html"
+	this.sidebarFile = "include/sidebar/classic_sidebar.html"
+}
+
+func (this *PerformanceController) MyRender(viewFile string) {
+	this.Construct()
+	this.BaseController.MyRender(viewFile)
+}
+
 func (this *PerformanceController) Index() {
 	fmt.Println(os.Hostname())
 

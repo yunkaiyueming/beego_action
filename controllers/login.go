@@ -17,24 +17,13 @@ func (this *LoginController) Construct() {
 	this.footerFile = "include/footer.html"
 }
 
-//调用NewRender或MyRender2
-func (this *LoginController) NewRender(viewFile string) {
-	layoutData := map[string]string{
-		"layoutFile":  "include/layout/main.html",
-		"headerFile":  "include/header.html",
-		"sidebarFile": "",
-		"footerFile":  "include/footer.html",
-	}
-	this.MyRender(viewFile, layoutData)
-}
-
 func (this *LoginController) Login() {
 	name := this.GetString("name")
 	pwd := this.GetString("pwd")
 	action := this.GetString("action")
 	if action == "" {
 		this.Construct()
-		this.MyRender2("login/view_login.html")
+		this.MyRender("login/view_login.html")
 		return
 	}
 
@@ -45,7 +34,7 @@ func (this *LoginController) Login() {
 		fmt.Println("login false")
 		this.Data["error_msg"] = "user login error"
 
-		this.NewRender("login/view_login.html")
+		this.MyRender("login/view_login.html")
 		return
 	} else {
 		this.SetSession("name", user_info.Name)

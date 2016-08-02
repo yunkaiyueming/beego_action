@@ -14,6 +14,18 @@ type FileController struct {
 	BaseController
 }
 
+func (this *FileController) Construct() {
+	this.headerFile = "include/header.html"
+	this.footerFile = "include/footer.html"
+	this.layoutFile = "include/layout/classic.html"
+	this.sidebarFile = "include/sidebar/classic_sidebar.html"
+}
+
+func (this *FileController) MyRender(viewFile string) {
+	this.Construct()
+	this.BaseController.MyRender(viewFile)
+}
+
 func (this *FileController) GetFileCon() {
 	file := "E:/GO_PATH/src/beego_action/beego_action.exe"
 
