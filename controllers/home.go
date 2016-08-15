@@ -16,20 +16,22 @@ type MachineConfig struct {
 	Dbinfo string
 }
 
-func (this *HomeController) Construct() {
+//重写Prepare，会在每个method方法前调用
+func (this *HomeController) Prepare() {
 	this.headerFile = "include/header.html"
 	this.footerFile = "include/footer.html"
 	this.layoutFile = "include/layout/classic.html"
 	this.sidebarFile = "include/sidebar/classic_sidebar.html"
+	this.PrepareViewData()
 }
 
-func (this *HomeController) MyRender(viewFile string) {
-	this.Construct()
-	this.BaseController.MyRender(viewFile)
-}
+//func (this *HomeController) MyRender(viewFile string) {
+//	this.Construct()
+//	this.BaseController.MyRender(viewFile)
+//}
 
 func (this *HomeController) Index() {
-	this.CheckLogin()
+	//this.CheckLogin()
 	this.getMachineConfig()
 	this.MyRender("home/view_machine.html")
 }

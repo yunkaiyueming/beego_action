@@ -19,6 +19,7 @@ type BaseController struct {
 
 func (this *BaseController) Prepare() {
 	fmt.Println("prepare")
+	fmt.Println(this.AppController)
 	this.PrepareViewData()
 }
 

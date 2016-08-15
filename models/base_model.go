@@ -39,6 +39,7 @@ func GetDbConfig() map[string]string {
 
 	DbConfigInfo := make(map[string]string)
 	DbConfigInfo["DbHost"] = iniconf.String("mysqlurls")
+	DbConfigInfo["Port"] = iniconf.String("mysqlport")
 	DbConfigInfo["User"] = iniconf.String("mysqluser")
 	DbConfigInfo["Pwd"] = iniconf.String("mysqlpass")
 	DbConfigInfo["DbName"] = iniconf.String("mysqldb")

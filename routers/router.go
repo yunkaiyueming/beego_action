@@ -22,10 +22,13 @@ func init() {
 
 	//接口管理
 	beego.Router("http/get", &controllers.HttpController{}, "get:Get")
+	beego.Router("http/user_http_lib", &controllers.HttpController{}, "get:UserHttpLib")
+	beego.Router("http/use_context", &controllers.HttpController{}, "get:UseContext")
 
 	beego.Router("json/", &controllers.JsonTestController{}, "get:Get")
 	beego.Router("json/claw_url_msg", &controllers.JsonTestController{}, "get:ClawUrlMsg")
 	beego.Router("json/claw_resonse_header", &controllers.JsonTestController{}, "get:ClawResponseHeader")
+	beego.Router("json/test_xml", &controllers.JsonTestController{}, "get:TestXml")
 
 	//文件模块
 	beego.Router("qiniu/get_files_msg", &controllers.QiniuController{}, "get:GetFilesMsg")
@@ -39,6 +42,9 @@ func init() {
 	beego.Router("login/login", &controllers.LoginController{}, "get,post:Login")
 	beego.Router("login/logout", &controllers.LoginController{}, "get:Logout")
 	beego.Router("login/seting", &controllers.LoginController{}, "get:Seting")
+
+	//国际化翻译模块
+	beego.Router("translate/", &controllers.TranslateController{}, "get:GetLang")
 
 	//注解路由
 	ns := beego.NewNamespace("/v2",

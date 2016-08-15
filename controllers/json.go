@@ -5,12 +5,10 @@ import (
 	"beego_action/models"
 	"encoding/json"
 	"fmt"
-
-	"github.com/astaxie/beego"
 )
 
 type JsonTestController struct {
-	beego.Controller
+	BaseController
 }
 
 type msg struct {
@@ -54,4 +52,16 @@ func (g *JsonTestController) GetGameJson() {
 	GameInfoJson := GameModel.GetGameJson()
 	g.Data["json"] = GameInfoJson
 	g.ServeJSON()
+}
+
+func (this *JsonTestController) TestXml() {
+	types := this.GetString("type")
+	msgData := msg{Id: 11, Name: "aa", Likes: []string{"apple", "orange", "banala"}}
+	if types == "json" {
+		this.Data["json"] = &msgData
+		this.ServeJSON()
+	} else {
+		this.Data["xml"] = &msgData
+		this.ServeXML()
+	}
 }

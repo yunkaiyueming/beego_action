@@ -16,17 +16,6 @@ type Article struct {
 	Type         string
 }
 
-func init() {
-	// set default database
-	orm.RegisterDataBase("default", "mysql", "root:123456@/test?charset=utf8", 30)
-
-	// register model
-	orm.RegisterModel(new(Article))
-
-	// create table
-	//orm.RunSyncdb("default", false, true)
-}
-
 func aa() {
 	fmt.Println("aa")
 }

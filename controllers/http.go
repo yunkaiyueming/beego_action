@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	_ "strings"
+
+	"github.com/astaxie/beego/httplib"
 )
 
 type HttpController struct {
@@ -43,4 +45,20 @@ func (this *HttpController) Get() {
 	this.Data["rep_headers"] = response.Header
 	this.Data["ret"] = string(body)
 	this.MyRender("http/view_get.html")
+}
+
+func (this *HttpController) UserHttpLib() {
+	//httplib.Get("http://www.kancloud.cn/hello123/beego/126134").Debug(true).Response()
+	req := httplib.Get("http://www.baidu.com")
+	str, _ := req.String()
+	this.Ctx.WriteString(str)
+}
+
+func (this *HttpController) UseContext() {
+	fmt.Println(this.Ctx.Input.Domain())
+	fmt.Println(this.Ctx.Input.Site())
+	fmt.Println(this.Ctx.Input.Host())
+	fmt.Println(this.Ctx.Input.URI()) //带查询参数
+	fmt.Println(this.Ctx.Input.URL())
+
 }
