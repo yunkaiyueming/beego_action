@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/astaxie/beego/orm"
-	_ "github.com/go-sql-driver/mysql" // import your used driver
+	_ "github.com/go-sql-driver/mysql"
 )
 
 type AppModel struct {
@@ -25,9 +25,16 @@ func init() {
 
 	// register model
 	orm.RegisterModel(new(AppModel), new(Article))
+}
 
-	// create table
-	orm.RunSyncdb("default", false, true)
+func createTable() {
+	name := "default"                          //数据库别名
+	force := false                             //不强制建数据库
+	verbose := true                            //打印建表过程
+	err := orm.RunSyncdb(name, force, verbose) //建表
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 
 func (this *AppModel) TestCurd() {
@@ -52,4 +59,18 @@ func (this *AppModel) TestCurd() {
 	// delete
 	num, err = o.Delete(&u)
 	fmt.Printf("NUM: %d, ERR: %v\n", num, err)
+}
+
+func (this *AppModel) InsertMulitTest() {
+	apps := []AppModel{
+		{Id: 1, Name: "app1"},
+		{Id: 2, Name: "app1"},
+		{Id: 3, Name: "app1"},
+		{Id: 4, Name: "app1"},
+		{Id: 5, Name: "app1"},
+	}
+
+	o := orm.NewOrm() //注册新的orm
+	o.InsertMulti(5, apps)
+	fmt.Println("success")
 }
