@@ -46,6 +46,11 @@ func init() {
 	//国际化翻译模块
 	beego.Router("translate/", &controllers.TranslateController{}, "get:GetLang")
 
+	//RPC
+	beego.Router("rpc/http", &controllers.RpcController{}, "get:Client_http")
+	beego.Router("rpc/json", &controllers.RpcController{}, "get:Client_json")
+	beego.Router("rpc/tcp", &controllers.RpcController{}, "get:Client_tcp")
+
 	//注解路由
 	ns := beego.NewNamespace("/v2",
 		beego.NSNamespace("/log",
