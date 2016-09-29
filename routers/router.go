@@ -24,6 +24,7 @@ func init() {
 	beego.Router("http/get", &controllers.HttpController{}, "get:Get")
 	beego.Router("http/user_http_lib", &controllers.HttpController{}, "get:UserHttpLib")
 	beego.Router("http/use_context", &controllers.HttpController{}, "get:UseContext")
+	beego.Router("http/", &controllers.HttpController{}, "get:TestNet")
 
 	beego.Router("json/", &controllers.JsonTestController{}, "get:Get")
 	beego.Router("json/claw_url_msg", &controllers.JsonTestController{}, "get:ClawUrlMsg")
@@ -53,6 +54,7 @@ func init() {
 
 	//Tricker
 	beego.Router("cron/", &controllers.TimeController{}, "get:Test")
+	beego.Router("regex", &controllers.RegexController{}, "get:Check")
 
 	//注解路由
 	ns := beego.NewNamespace("/v2",

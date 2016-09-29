@@ -62,3 +62,7 @@ func (this *HttpController) UseContext() {
 	fmt.Println(this.Ctx.Input.URL())
 
 }
+
+func (this *HttpController) TestNet() {
+	helpers.GetHost()
+}
