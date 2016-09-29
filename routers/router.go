@@ -51,6 +51,9 @@ func init() {
 	beego.Router("rpc/json", &controllers.RpcController{}, "get:Client_json")
 	beego.Router("rpc/tcp", &controllers.RpcController{}, "get:Client_tcp")
 
+	//Tricker
+	beego.Router("cron/", &controllers.TimeController{}, "get:Test")
+
 	//注解路由
 	ns := beego.NewNamespace("/v2",
 		beego.NSNamespace("/log",
