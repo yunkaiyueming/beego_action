@@ -31,7 +31,7 @@ func (this *HomeController) Prepare() {
 //}
 
 func (this *HomeController) Index() {
-	//this.CheckLogin()
+	this.CheckLogin()
 	this.getMachineConfig()
 	this.MyRender("home/view_machine.html")
 }
