@@ -3,6 +3,7 @@ package controllers
 import (
 	"fmt"
 
+	"beego_action/helpers"
 	"beego_action/models"
 )
 
@@ -33,13 +34,12 @@ func (this *LoginController) Login() {
 	if user_info.Id == 0 {
 		fmt.Println("login false")
 		this.Data["error_msg"] = "user login error"
-
 		this.MyRender("login/view_login.html")
 		return
 	} else {
 		this.SetSession("name", user_info.Name)
 		this.SetSession("id", user_info.Id)
-		this.Redirect("home/index", 200)
+		this.Redirect(helpers.SiteUrl("home/index"), 302)
 		return
 	}
 
@@ -51,6 +51,7 @@ func (this *LoginController) Logout() {
 	if name != nil {
 		this.DestroySession()
 	}
+	this.Redirect(helpers.SiteUrl("login/login"), 302)
 }
 
 func (this *LoginController) Seting() {
