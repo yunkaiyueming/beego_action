@@ -7,6 +7,8 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/astaxie/beego"
 )
 
 func My_http_get(url string) string {
@@ -119,4 +121,8 @@ func CheckError(err error) {
 	if err != nil {
 		panic(err)
 	}
+}
+
+func SiteUrl(baseName string) string {
+	return beego.AppConfig.String("siteUrl") + "/" + baseName
 }

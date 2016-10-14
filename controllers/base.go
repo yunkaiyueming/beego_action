@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"beego_action/helpers"
 	"beego_action/models"
 	"fmt"
 
@@ -47,7 +48,7 @@ func (this *BaseController) CheckLogin() bool {
 	if id != nil && name != nil {
 		return true
 	} else {
-		this.Redirect("home/index", 302)
+		this.Redirect(helpers.SiteUrl("login/login"), 302)
 		return false
 	}
 }
