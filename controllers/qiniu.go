@@ -5,8 +5,9 @@ import (
 	"fmt"
 
 	"github.com/astaxie/beego"
-	"github.com/qiniu/api.v7/kodo"
+
 	"qiniupkg.com/api.v7/conf"
+	"qiniupkg.com/api.v7/kodo"
 	"qiniupkg.com/api.v7/kodocli"
 )
 
